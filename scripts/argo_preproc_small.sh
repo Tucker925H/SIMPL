@@ -16,3 +16,6 @@ python data_argo/run_preprocess.py --mode train \
 #   --data_dir ~/data/dataset/argo_motion_forecasting/test_obs/data/ \
 #   --save_dir data_argo/features/ \
 #   --small
+
+
+# このファイルは --data_dir から1024のサンプル(-smallオプション)を読み込んでデータの前処理として特徴量を抽出し.pklファイルに保存するスクリプトです。
