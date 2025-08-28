@@ -51,12 +51,24 @@ def main():
     records = []
     with torch.no_grad():
         for i, data in enumerate(tqdm(dataloader, desc="評価中")):
+            
+            # 学習済モデルを使用してデータを前処理
             data_in = net.pre_process(data)
+            # モデルにデータを入力して出力を取得
             out = net(data_in)
+            # 出力を後処理
             post_out = net.post_process(out)
+
+            # 評価指標を計算
             eval_out = evaluator.evaluate(post_out, data)
             # sample_idと指標を抽出
             sample_id = data["SEQ_ID"][0] if "SEQ_ID" in data else None
+
+            # if i == 1:
+            #     print(f"Sample ID: {sample_id}, Evaluation Output: {eval_out}")
+            #     print(data["SEQ_ID"])
+            #     break
+
             record = {
                 "sample_ID": sample_id,
                 "minADE_k": eval_out.get("minade_k", None),
