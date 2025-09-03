@@ -6,6 +6,10 @@ import pandas as pd
 from tqdm import tqdm
 from importlib import import_module
 from torch.utils.data import DataLoader
+
+# loader.pyが一つ上の階層にある場合、パスをsys.pathの先頭に追加
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 from loader import Loader
 
 def parse_arguments():
