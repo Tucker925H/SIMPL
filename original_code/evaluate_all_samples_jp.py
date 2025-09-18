@@ -34,7 +34,7 @@ def main():
     # Loaderの初期化
     loader = Loader(args, device, is_ddp=False)
     loader.set_resmue(args.model_path)
-    (train_set, val_set), net, _, _, evaluator = loader.load()
+    (train_set, val_set), net, loss_fn, _, evaluator = loader.load()
     net.eval()
 
     # データセットの選択
@@ -63,6 +63,8 @@ def main():
             # 出力を後処理
             post_out = net.post_process(out)
 
+            loss_out = loss_fn(out, data)
+
             # 評価指標を計算
             eval_out = evaluator.evaluate(post_out, data)
             # sample_idと指標を抽出
@@ -79,6 +81,7 @@ def main():
                 "minFDE_k": eval_out.get("minfde_k", None),
                 "MR_k": eval_out.get("mr_k", None),
                 "b-minFDE_k": eval_out.get("brier_fde_k", None),
+                "loss": loss_out.get("total_loss", None)
             }
             records.append(record)
 
