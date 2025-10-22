@@ -1,0 +1,1301 @@
+2025-10-20 03:30:45:Args: Namespace(mode='train', features_dir='data_argo/features/', train_batch_size=16, val_batch_size=4, train_epoches=10, val_interval=2, data_aug=True, seed=42, use_cuda=True, logger_writer=True, adv_cfg_path='config.simpl_cfg', rank_metric='brier_fde_k', resume=False, no_pbar=False, model_path=None, init_labeled='auto', select_top='auto', active_rounds=20)
+
+2025-10-20 03:30:45:Project Path: /home/tucker/dev/SIMPL
+2025-10-20 03:30:45:Datetime: 20251020-153045
+
+2025-10-20 03:30:45:Commit Msg: commit 38a85fd0d8fff1cc6b24c59d08d299b95f29a325
+Merge: 9e559cb 5212334
+Author: Honda Takayuki <81165526+Tucker925H@users.noreply.github.com>
+Date:   Thu Sep 18 14:24:20 2025 +0900
+
+    Merge pull request #8 from Tucker925H/#7_extract_data_using_loss_function
+    
+    Implement code changes to enhance functionality and improve performance
+
+2025-10-20 03:30:45:======================================
+
+2025-10-20 03:30:46:[ActiveLoop] Using 102971 samples.
+2025-10-20 03:30:46:[ActiveLoop] Sampled 102971 unique indices.
+2025-10-20 03:30:46:[ActiveLoop] total=205942, init_labeled=5149, pool=97822
+2025-10-20 03:30:46:
+========== Active Learning Round 1 ==========
+2025-10-20 03:30:46:[Round 1] labeled=5149, pool=97822
+2025-10-20 03:30:46:
+Epoch 0
+2025-10-20 03:31:50:[Training] Avg. loss: 4.72274, time cost: 1.07 mins, lr: 0.0001, peak mem: 13742 MB
+2025-10-20 03:31:50:-- minade_1: 12.359 minfde_1: 25.243 mr_1: 0.995 brier_fde_1: 25.243 minade_k: 12.275 minfde_k: 25.121 mr_k: 0.995 brier_fde_k: 25.562 
+2025-10-20 03:31:50:
+Epoch 1
+2025-10-20 03:32:53:[Training] Avg. loss: 3.35196, time cost: 1.05 mins, lr: 0.00028, peak mem: 13819 MB
+2025-10-20 03:32:53:-- minade_1: 10.717 minfde_1: 23.044 mr_1: 0.982 brier_fde_1: 23.044 minade_k: 8.868 minfde_k: 20.781 mr_k: 0.963 brier_fde_k: 21.402 
+2025-10-20 03:35:41:[Validation] Avg. loss: 3.09902, time cost: 2.8 mins
+2025-10-20 03:35:41:-- minade_1: 10.396 minfde_1: 22.871 mr_1: 0.965 brier_fde_1: 22.871 minade_k: 7.579 minfde_k: 19.331 mr_k: 0.925 brier_fde_k: 20.015 
+2025-10-20 03:35:41:
+Epoch 2
+2025-10-20 03:36:44:[Training] Avg. loss: 1.57231, time cost: 1.04 mins, lr: 0.00046, peak mem: 13777 MB
+2025-10-20 03:36:44:-- minade_1: 6.860 minfde_1: 15.855 mr_1: 0.930 brier_fde_1: 15.855 minade_k: 4.182 minfde_k: 11.334 mr_k: 0.802 brier_fde_k: 11.965 
+2025-10-20 03:36:44:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch2.tar
+2025-10-20 03:36:44:
+Epoch 3
+2025-10-20 03:37:48:[Training] Avg. loss: 0.804773, time cost: 1.05 mins, lr: 0.00064, peak mem: 13732 MB
+2025-10-20 03:37:48:-- minade_1: 3.879 minfde_1: 8.939 mr_1: 0.843 brier_fde_1: 8.939 minade_k: 2.083 minfde_k: 4.756 mr_k: 0.548 brier_fde_k: 5.356 
+2025-10-20 03:40:37:[Validation] Avg. loss: 0.723398, time cost: 2.82 mins
+2025-10-20 03:40:37:-- minade_1: 3.001 minfde_1: 7.180 mr_1: 0.825 brier_fde_1: 7.180 minade_k: 1.768 minfde_k: 4.018 mr_k: 0.497 brier_fde_k: 4.614 
+2025-10-20 03:40:37:
+Epoch 4
+2025-10-20 03:41:40:[Training] Avg. loss: 0.685004, time cost: 1.05 mins, lr: 0.00082, peak mem: 13913 MB
+2025-10-20 03:41:40:-- minade_1: 3.732 minfde_1: 8.274 mr_1: 0.830 brier_fde_1: 8.274 minade_k: 1.776 minfde_k: 3.601 mr_k: 0.468 brier_fde_k: 4.231 
+2025-10-20 03:41:40:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch4.tar
+2025-10-20 03:41:40:
+Epoch 5
+2025-10-20 03:42:43:[Training] Avg. loss: 0.64619, time cost: 1.05 mins, lr: 0.001, peak mem: 13754 MB
+2025-10-20 03:42:43:-- minade_1: 3.700 minfde_1: 8.185 mr_1: 0.825 brier_fde_1: 8.185 minade_k: 1.661 minfde_k: 3.259 mr_k: 0.439 brier_fde_k: 3.908 
+2025-10-20 03:45:29:[Validation] Avg. loss: 0.640583, time cost: 2.76 mins
+2025-10-20 03:45:29:-- minade_1: 3.413 minfde_1: 7.438 mr_1: 0.817 brier_fde_1: 7.438 minade_k: 1.488 minfde_k: 2.910 mr_k: 0.424 brier_fde_k: 3.560 
+2025-10-20 03:45:29:
+Epoch 6
+2025-10-20 03:46:31:[Training] Avg. loss: 0.618685, time cost: 1.02 mins, lr: 0.001, peak mem: 15511 MB
+2025-10-20 03:46:31:-- minade_1: 3.619 minfde_1: 8.078 mr_1: 0.819 brier_fde_1: 8.078 minade_k: 1.624 minfde_k: 3.207 mr_k: 0.417 brier_fde_k: 3.868 
+2025-10-20 03:49:13:[Validation] Avg. loss: 0.593827, time cost: 2.7 mins
+2025-10-20 03:49:13:-- minade_1: 3.146 minfde_1: 6.979 mr_1: 0.771 brier_fde_1: 6.979 minade_k: 1.414 minfde_k: 2.707 mr_k: 0.405 brier_fde_k: 3.311 
+2025-10-20 03:49:13:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch6.tar
+2025-10-20 03:49:13:
+Epoch 7
+2025-10-20 03:50:15:[Training] Avg. loss: 0.603626, time cost: 1.02 mins, lr: 0.001, peak mem: 14266 MB
+2025-10-20 03:50:15:-- minade_1: 3.552 minfde_1: 7.945 mr_1: 0.816 brier_fde_1: 7.945 minade_k: 1.601 minfde_k: 3.126 mr_k: 0.415 brier_fde_k: 3.785 
+2025-10-20 03:52:57:[Validation] Avg. loss: 0.683459, time cost: 2.7 mins
+2025-10-20 03:52:57:-- minade_1: 4.301 minfde_1: 9.181 mr_1: 0.887 brier_fde_1: 9.181 minade_k: 1.638 minfde_k: 3.128 mr_k: 0.523 brier_fde_k: 3.767 
+2025-10-20 03:52:57:
+Epoch 8
+2025-10-20 03:53:59:[Training] Avg. loss: 0.603464, time cost: 1.03 mins, lr: 0.001, peak mem: 13963 MB
+2025-10-20 03:53:59:-- minade_1: 3.704 minfde_1: 8.272 mr_1: 0.817 brier_fde_1: 8.272 minade_k: 1.607 minfde_k: 3.148 mr_k: 0.421 brier_fde_k: 3.818 
+2025-10-20 03:56:40:[Validation] Avg. loss: 0.590442, time cost: 2.7 mins
+2025-10-20 03:56:40:-- minade_1: 3.235 minfde_1: 7.254 mr_1: 0.809 brier_fde_1: 7.254 minade_k: 1.391 minfde_k: 2.713 mr_k: 0.389 brier_fde_k: 3.401 
+2025-10-20 03:56:40:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch8.tar
+2025-10-20 03:56:40:
+Epoch 9
+2025-10-20 03:57:42:[Training] Avg. loss: 0.57903, time cost: 1.02 mins, lr: 0.001, peak mem: 14467 MB
+2025-10-20 03:57:42:-- minade_1: 3.427 minfde_1: 7.742 mr_1: 0.811 brier_fde_1: 7.742 minade_k: 1.536 minfde_k: 3.000 mr_k: 0.403 brier_fde_k: 3.668 
+2025-10-20 04:00:24:[Validation] Avg. loss: 0.606726, time cost: 2.7 mins
+2025-10-20 04:00:24:-- minade_1: 3.167 minfde_1: 6.973 mr_1: 0.843 brier_fde_1: 6.973 minade_k: 1.464 minfde_k: 2.588 mr_k: 0.368 brier_fde_k: 3.228 
+2025-10-20 04:00:24:
+Training completed
+2025-10-20 04:10:12:[Round 1] add 5149 hard samples -> labeled=10298, pool=92673
+2025-10-20 04:10:12:
+========== Active Learning Round 2 ==========
+2025-10-20 04:10:12:[Round 2] labeled=10298, pool=92673
+2025-10-20 04:10:13:
+Epoch 0
+2025-10-20 04:12:20:[Training] Avg. loss: 6.85385, time cost: 2.11 mins, lr: 0.0001, peak mem: 15012 MB
+2025-10-20 04:12:20:-- minade_1: 15.883 minfde_1: 31.795 mr_1: 0.998 brier_fde_1: 31.795 minade_k: 14.286 minfde_k: 29.671 mr_k: 0.991 brier_fde_k: 30.366 
+2025-10-20 04:12:20:
+Epoch 1
+2025-10-20 04:14:27:[Training] Avg. loss: 3.86572, time cost: 2.11 mins, lr: 0.00028, peak mem: 15467 MB
+2025-10-20 04:14:27:-- minade_1: 10.155 minfde_1: 22.982 mr_1: 0.971 brier_fde_1: 22.982 minade_k: 8.072 minfde_k: 19.501 mr_k: 0.908 brier_fde_k: 20.120 
+2025-10-20 04:17:10:[Validation] Avg. loss: 1.23552, time cost: 2.73 mins
+2025-10-20 04:17:10:-- minade_1: 4.493 minfde_1: 11.724 mr_1: 0.923 brier_fde_1: 11.724 minade_k: 3.159 minfde_k: 8.696 mr_k: 0.763 brier_fde_k: 9.256 
+2025-10-20 04:17:10:
+Epoch 2
+2025-10-20 04:19:17:[Training] Avg. loss: 1.80435, time cost: 2.11 mins, lr: 0.00046, peak mem: 15002 MB
+2025-10-20 04:19:17:-- minade_1: 6.247 minfde_1: 14.315 mr_1: 0.901 brier_fde_1: 14.315 minade_k: 3.626 minfde_k: 8.320 mr_k: 0.715 brier_fde_k: 8.943 
+2025-10-20 04:19:18:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch2.tar
+2025-10-20 04:19:18:
+Epoch 3
+2025-10-20 04:21:25:[Training] Avg. loss: 1.27781, time cost: 2.12 mins, lr: 0.00064, peak mem: 14908 MB
+2025-10-20 04:21:25:-- minade_1: 6.014 minfde_1: 13.450 mr_1: 0.901 brier_fde_1: 13.450 minade_k: 2.567 minfde_k: 5.228 mr_k: 0.604 brier_fde_k: 5.920 
+2025-10-20 04:24:09:[Validation] Avg. loss: 0.520639, time cost: 2.74 mins
+2025-10-20 04:24:09:-- minade_1: 3.905 minfde_1: 8.504 mr_1: 0.863 brier_fde_1: 8.504 minade_k: 1.250 minfde_k: 2.263 mr_k: 0.434 brier_fde_k: 2.901 
+2025-10-20 04:24:09:
+Epoch 4
+2025-10-20 04:26:17:[Training] Avg. loss: 1.05871, time cost: 2.13 mins, lr: 0.00082, peak mem: 16106 MB
+2025-10-20 04:26:17:-- minade_1: 5.668 minfde_1: 12.657 mr_1: 0.883 brier_fde_1: 12.657 minade_k: 2.155 minfde_k: 4.060 mr_k: 0.550 brier_fde_k: 4.750 
+2025-10-20 04:26:17:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch4.tar
+2025-10-20 04:26:17:
+Epoch 5
+2025-10-20 04:28:28:[Training] Avg. loss: 1.00641, time cost: 2.17 mins, lr: 0.001, peak mem: 15728 MB
+2025-10-20 04:28:28:-- minade_1: 5.360 minfde_1: 11.992 mr_1: 0.880 brier_fde_1: 11.992 minade_k: 2.026 minfde_k: 3.721 mr_k: 0.551 brier_fde_k: 4.405 
+2025-10-20 04:31:19:[Validation] Avg. loss: 0.483018, time cost: 2.86 mins
+2025-10-20 04:31:19:-- minade_1: 3.028 minfde_1: 6.923 mr_1: 0.852 brier_fde_1: 6.923 minade_k: 1.157 minfde_k: 2.109 mr_k: 0.395 brier_fde_k: 2.736 
+2025-10-20 04:31:19:
+Epoch 6
+2025-10-20 04:33:27:[Training] Avg. loss: 0.959198, time cost: 2.12 mins, lr: 0.001, peak mem: 14793 MB
+2025-10-20 04:33:27:-- minade_1: 5.004 minfde_1: 11.226 mr_1: 0.862 brier_fde_1: 11.226 minade_k: 1.935 minfde_k: 3.462 mr_k: 0.524 brier_fde_k: 4.151 
+2025-10-20 04:36:11:[Validation] Avg. loss: 0.49277, time cost: 2.73 mins
+2025-10-20 04:36:11:-- minade_1: 4.432 minfde_1: 9.539 mr_1: 0.906 brier_fde_1: 9.539 minade_k: 1.213 minfde_k: 2.142 mr_k: 0.413 brier_fde_k: 2.824 
+2025-10-20 04:36:11:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch6.tar
+2025-10-20 04:36:11:
+Epoch 7
+2025-10-20 04:38:18:[Training] Avg. loss: 0.929833, time cost: 2.12 mins, lr: 0.001, peak mem: 15181 MB
+2025-10-20 04:38:18:-- minade_1: 5.051 minfde_1: 11.354 mr_1: 0.863 brier_fde_1: 11.354 minade_k: 1.879 minfde_k: 3.331 mr_k: 0.513 brier_fde_k: 4.016 
+2025-10-20 04:41:02:[Validation] Avg. loss: 0.462329, time cost: 2.74 mins
+2025-10-20 04:41:02:-- minade_1: 2.761 minfde_1: 6.054 mr_1: 0.805 brier_fde_1: 6.054 minade_k: 1.100 minfde_k: 1.924 mr_k: 0.313 brier_fde_k: 2.560 
+2025-10-20 04:41:02:
+Epoch 8
+2025-10-20 04:43:09:[Training] Avg. loss: 0.906403, time cost: 2.11 mins, lr: 0.001, peak mem: 16016 MB
+2025-10-20 04:43:09:-- minade_1: 5.011 minfde_1: 11.345 mr_1: 0.860 brier_fde_1: 11.345 minade_k: 1.825 minfde_k: 3.216 mr_k: 0.497 brier_fde_k: 3.896 
+2025-10-20 04:45:53:[Validation] Avg. loss: 0.447299, time cost: 2.73 mins
+2025-10-20 04:45:53:-- minade_1: 2.411 minfde_1: 5.398 mr_1: 0.730 brier_fde_1: 5.398 minade_k: 1.032 minfde_k: 1.856 mr_k: 0.294 brier_fde_k: 2.443 
+2025-10-20 04:45:53:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch8.tar
+2025-10-20 04:45:53:
+Epoch 9
+2025-10-20 04:48:00:[Training] Avg. loss: 0.885128, time cost: 2.11 mins, lr: 0.001, peak mem: 15959 MB
+2025-10-20 04:48:00:-- minade_1: 4.784 minfde_1: 10.820 mr_1: 0.847 brier_fde_1: 10.820 minade_k: 1.774 minfde_k: 3.091 mr_k: 0.482 brier_fde_k: 3.770 
+2025-10-20 04:50:45:[Validation] Avg. loss: 0.430255, time cost: 2.73 mins
+2025-10-20 04:50:45:-- minade_1: 2.824 minfde_1: 6.258 mr_1: 0.796 brier_fde_1: 6.258 minade_k: 1.026 minfde_k: 1.812 mr_k: 0.293 brier_fde_k: 2.417 
+2025-10-20 04:50:45:
+Training completed
+2025-10-20 05:00:07:[Round 2] add 5149 hard samples -> labeled=15447, pool=87524
+2025-10-20 05:00:07:
+========== Active Learning Round 3 ==========
+2025-10-20 05:00:07:[Round 3] labeled=15447, pool=87524
+2025-10-20 05:00:07:
+Epoch 0
+2025-10-20 05:03:13:[Training] Avg. loss: 6.58771, time cost: 3.1 mins, lr: 0.0001, peak mem: 14708 MB
+2025-10-20 05:03:13:-- minade_1: 14.990 minfde_1: 30.673 mr_1: 0.993 brier_fde_1: 30.673 minade_k: 13.106 minfde_k: 28.084 mr_k: 0.986 brier_fde_k: 28.782 
+2025-10-20 05:03:13:
+Epoch 1
+2025-10-20 05:06:20:[Training] Avg. loss: 2.92125, time cost: 3.1 mins, lr: 0.00028, peak mem: 15042 MB
+2025-10-20 05:06:20:-- minade_1: 8.307 minfde_1: 19.025 mr_1: 0.942 brier_fde_1: 19.025 minade_k: 5.920 minfde_k: 14.615 mr_k: 0.834 brier_fde_k: 15.219 
+2025-10-20 05:09:00:[Validation] Avg. loss: 0.736089, time cost: 2.68 mins
+2025-10-20 05:09:00:-- minade_1: 3.120 minfde_1: 7.659 mr_1: 0.819 brier_fde_1: 7.659 minade_k: 1.905 minfde_k: 4.691 mr_k: 0.559 brier_fde_k: 5.244 
+2025-10-20 05:09:00:
+Epoch 2
+2025-10-20 05:12:07:[Training] Avg. loss: 1.34385, time cost: 3.1 mins, lr: 0.00046, peak mem: 15558 MB
+2025-10-20 05:12:07:-- minade_1: 5.338 minfde_1: 12.016 mr_1: 0.881 brier_fde_1: 12.016 minade_k: 2.625 minfde_k: 5.502 mr_k: 0.628 brier_fde_k: 6.144 
+2025-10-20 05:12:07:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch2.tar
+2025-10-20 05:12:07:
+Epoch 3
+2025-10-20 05:15:13:[Training] Avg. loss: 1.05164, time cost: 3.1 mins, lr: 0.00064, peak mem: 14473 MB
+2025-10-20 05:15:13:-- minade_1: 5.057 minfde_1: 11.274 mr_1: 0.874 brier_fde_1: 11.274 minade_k: 2.046 minfde_k: 3.839 mr_k: 0.534 brier_fde_k: 4.526 
+2025-10-20 05:17:54:[Validation] Avg. loss: 0.459838, time cost: 2.68 mins
+2025-10-20 05:17:54:-- minade_1: 2.568 minfde_1: 5.835 mr_1: 0.739 brier_fde_1: 5.835 minade_k: 1.100 minfde_k: 1.948 mr_k: 0.350 brier_fde_k: 2.552 
+2025-10-20 05:17:54:
+Epoch 4
+2025-10-20 05:21:00:[Training] Avg. loss: 0.978421, time cost: 3.1 mins, lr: 0.00082, peak mem: 14348 MB
+2025-10-20 05:21:00:-- minade_1: 4.829 minfde_1: 10.804 mr_1: 0.864 brier_fde_1: 10.804 minade_k: 1.870 minfde_k: 3.367 mr_k: 0.515 brier_fde_k: 4.052 
+2025-10-20 05:21:00:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch4.tar
+2025-10-20 05:21:00:
+Epoch 5
+2025-10-20 05:24:06:[Training] Avg. loss: 0.953779, time cost: 3.1 mins, lr: 0.001, peak mem: 15097 MB
+2025-10-20 05:24:06:-- minade_1: 4.718 minfde_1: 10.566 mr_1: 0.862 brier_fde_1: 10.566 minade_k: 1.821 minfde_k: 3.234 mr_k: 0.512 brier_fde_k: 3.919 
+2025-10-20 05:26:47:[Validation] Avg. loss: 0.470689, time cost: 2.67 mins
+2025-10-20 05:26:47:-- minade_1: 2.642 minfde_1: 5.663 mr_1: 0.749 brier_fde_1: 5.663 minade_k: 1.163 minfde_k: 1.947 mr_k: 0.365 brier_fde_k: 2.537 
+2025-10-20 05:26:47:
+Epoch 6
+2025-10-20 05:29:53:[Training] Avg. loss: 0.917322, time cost: 3.1 mins, lr: 0.001, peak mem: 14939 MB
+2025-10-20 05:29:53:-- minade_1: 4.669 minfde_1: 10.465 mr_1: 0.859 brier_fde_1: 10.465 minade_k: 1.754 minfde_k: 3.051 mr_k: 0.498 brier_fde_k: 3.730 
+2025-10-20 05:32:34:[Validation] Avg. loss: 0.455006, time cost: 2.68 mins
+2025-10-20 05:32:34:-- minade_1: 3.507 minfde_1: 7.711 mr_1: 0.870 brier_fde_1: 7.711 minade_k: 1.095 minfde_k: 1.945 mr_k: 0.361 brier_fde_k: 2.621 
+2025-10-20 05:32:34:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch6.tar
+2025-10-20 05:32:34:
+Epoch 7
+2025-10-20 05:35:40:[Training] Avg. loss: 0.898928, time cost: 3.1 mins, lr: 0.001, peak mem: 14588 MB
+2025-10-20 05:35:40:-- minade_1: 4.590 minfde_1: 10.328 mr_1: 0.857 brier_fde_1: 10.328 minade_k: 1.728 minfde_k: 2.983 mr_k: 0.488 brier_fde_k: 3.661 
+2025-10-20 05:38:21:[Validation] Avg. loss: 0.454373, time cost: 2.68 mins
+2025-10-20 05:38:21:-- minade_1: 2.558 minfde_1: 5.715 mr_1: 0.807 brier_fde_1: 5.715 minade_k: 1.072 minfde_k: 1.921 mr_k: 0.373 brier_fde_k: 2.514 
+2025-10-20 05:38:21:
+Epoch 8
+2025-10-20 05:41:28:[Training] Avg. loss: 0.872259, time cost: 3.11 mins, lr: 0.001, peak mem: 14092 MB
+2025-10-20 05:41:28:-- minade_1: 4.531 minfde_1: 10.241 mr_1: 0.854 brier_fde_1: 10.241 minade_k: 1.684 minfde_k: 2.895 mr_k: 0.466 brier_fde_k: 3.571 
+2025-10-20 05:44:08:[Validation] Avg. loss: 0.415477, time cost: 2.67 mins
+2025-10-20 05:44:08:-- minade_1: 2.353 minfde_1: 5.215 mr_1: 0.718 brier_fde_1: 5.215 minade_k: 1.013 minfde_k: 1.750 mr_k: 0.287 brier_fde_k: 2.330 
+2025-10-20 05:44:08:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch8.tar
+2025-10-20 05:44:08:
+Epoch 9
+2025-10-20 05:47:15:[Training] Avg. loss: 0.868237, time cost: 3.1 mins, lr: 0.001, peak mem: 14700 MB
+2025-10-20 05:47:15:-- minade_1: 4.579 minfde_1: 10.351 mr_1: 0.856 brier_fde_1: 10.351 minade_k: 1.674 minfde_k: 2.878 mr_k: 0.470 brier_fde_k: 3.553 
+2025-10-20 05:49:55:[Validation] Avg. loss: 0.425173, time cost: 2.68 mins
+2025-10-20 05:49:55:-- minade_1: 2.526 minfde_1: 5.602 mr_1: 0.783 brier_fde_1: 5.602 minade_k: 1.029 minfde_k: 1.802 mr_k: 0.323 brier_fde_k: 2.402 
+2025-10-20 05:49:55:
+Training completed
+2025-10-20 05:58:39:[Round 3] add 5149 hard samples -> labeled=20596, pool=82375
+2025-10-20 05:58:39:
+========== Active Learning Round 4 ==========
+2025-10-20 05:58:39:[Round 4] labeled=20596, pool=82375
+2025-10-20 05:58:39:
+Epoch 0
+2025-10-20 06:02:47:[Training] Avg. loss: 6.04556, time cost: 4.13 mins, lr: 0.0001, peak mem: 14226 MB
+2025-10-20 06:02:47:-- minade_1: 13.700 minfde_1: 29.031 mr_1: 0.991 brier_fde_1: 29.031 minade_k: 11.964 minfde_k: 26.915 mr_k: 0.980 brier_fde_k: 27.473 
+2025-10-20 06:02:47:
+Epoch 1
+2025-10-20 06:06:55:[Training] Avg. loss: 2.05817, time cost: 4.13 mins, lr: 0.00028, peak mem: 14303 MB
+2025-10-20 06:06:55:-- minade_1: 6.108 minfde_1: 14.896 mr_1: 0.912 brier_fde_1: 14.896 minade_k: 4.122 minfde_k: 10.554 mr_k: 0.729 brier_fde_k: 11.148 
+2025-10-20 06:09:36:[Validation] Avg. loss: 0.525513, time cost: 2.68 mins
+2025-10-20 06:09:36:-- minade_1: 3.029 minfde_1: 6.945 mr_1: 0.777 brier_fde_1: 6.945 minade_k: 1.309 minfde_k: 2.776 mr_k: 0.414 brier_fde_k: 3.346 
+2025-10-20 06:09:36:
+Epoch 2
+2025-10-20 06:13:45:[Training] Avg. loss: 1.0321, time cost: 4.13 mins, lr: 0.00046, peak mem: 14303 MB
+2025-10-20 06:13:45:-- minade_1: 4.625 minfde_1: 10.390 mr_1: 0.859 brier_fde_1: 10.390 minade_k: 1.989 minfde_k: 3.844 mr_k: 0.506 brier_fde_k: 4.499 
+2025-10-20 06:13:45:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch2.tar
+2025-10-20 06:13:45:
+Epoch 3
+2025-10-20 06:17:53:[Training] Avg. loss: 0.919117, time cost: 4.13 mins, lr: 0.00064, peak mem: 14435 MB
+2025-10-20 06:17:53:-- minade_1: 4.542 minfde_1: 10.141 mr_1: 0.855 brier_fde_1: 10.141 minade_k: 1.776 minfde_k: 3.191 mr_k: 0.490 brier_fde_k: 3.865 
+2025-10-20 06:20:34:[Validation] Avg. loss: 0.453261, time cost: 2.68 mins
+2025-10-20 06:20:34:-- minade_1: 2.638 minfde_1: 5.640 mr_1: 0.754 brier_fde_1: 5.640 minade_k: 1.135 minfde_k: 1.907 mr_k: 0.368 brier_fde_k: 2.488 
+2025-10-20 06:20:34:
+Epoch 4
+2025-10-20 06:24:42:[Training] Avg. loss: 0.884465, time cost: 4.13 mins, lr: 0.00082, peak mem: 16052 MB
+2025-10-20 06:24:42:-- minade_1: 4.454 minfde_1: 9.977 mr_1: 0.852 brier_fde_1: 9.977 minade_k: 1.696 minfde_k: 2.976 mr_k: 0.483 brier_fde_k: 3.652 
+2025-10-20 06:24:42:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch4.tar
+2025-10-20 06:24:42:
+Epoch 5
+2025-10-20 06:28:50:[Training] Avg. loss: 0.860913, time cost: 4.13 mins, lr: 0.001, peak mem: 15612 MB
+2025-10-20 06:28:50:-- minade_1: 4.496 minfde_1: 10.091 mr_1: 0.851 brier_fde_1: 10.091 minade_k: 1.642 minfde_k: 2.840 mr_k: 0.465 brier_fde_k: 3.513 
+2025-10-20 06:31:31:[Validation] Avg. loss: 0.418858, time cost: 2.69 mins
+2025-10-20 06:31:31:-- minade_1: 2.284 minfde_1: 5.001 mr_1: 0.720 brier_fde_1: 5.001 minade_k: 1.038 minfde_k: 1.745 mr_k: 0.289 brier_fde_k: 2.335 
+2025-10-20 06:31:32:
+Epoch 6
+2025-10-20 06:35:40:[Training] Avg. loss: 0.835207, time cost: 4.13 mins, lr: 0.001, peak mem: 15099 MB
+2025-10-20 06:35:40:-- minade_1: 4.356 minfde_1: 9.801 mr_1: 0.840 brier_fde_1: 9.801 minade_k: 1.608 minfde_k: 2.752 mr_k: 0.452 brier_fde_k: 3.424 
+2025-10-20 06:38:21:[Validation] Avg. loss: 0.397698, time cost: 2.68 mins
+2025-10-20 06:38:21:-- minade_1: 2.602 minfde_1: 5.747 mr_1: 0.768 brier_fde_1: 5.747 minade_k: 0.985 minfde_k: 1.679 mr_k: 0.285 brier_fde_k: 2.302 
+2025-10-20 06:38:21:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch6.tar
+2025-10-20 06:38:21:
+Epoch 7
+2025-10-20 06:42:29:[Training] Avg. loss: 0.816869, time cost: 4.12 mins, lr: 0.001, peak mem: 14906 MB
+2025-10-20 06:42:29:-- minade_1: 4.394 minfde_1: 9.888 mr_1: 0.843 brier_fde_1: 9.888 minade_k: 1.577 minfde_k: 2.684 mr_k: 0.440 brier_fde_k: 3.356 
+2025-10-20 06:45:10:[Validation] Avg. loss: 0.38046, time cost: 2.69 mins
+2025-10-20 06:45:10:-- minade_1: 2.201 minfde_1: 4.896 mr_1: 0.710 brier_fde_1: 4.896 minade_k: 0.932 minfde_k: 1.588 mr_k: 0.221 brier_fde_k: 2.197 
+2025-10-20 06:45:10:
+Epoch 8
+2025-10-20 06:49:18:[Training] Avg. loss: 0.793037, time cost: 4.13 mins, lr: 0.001, peak mem: 14936 MB
+2025-10-20 06:49:18:-- minade_1: 4.206 minfde_1: 9.460 mr_1: 0.831 brier_fde_1: 9.460 minade_k: 1.542 minfde_k: 2.587 mr_k: 0.417 brier_fde_k: 3.259 
+2025-10-20 06:51:59:[Validation] Avg. loss: 0.386842, time cost: 2.68 mins
+2025-10-20 06:51:59:-- minade_1: 2.470 minfde_1: 5.571 mr_1: 0.702 brier_fde_1: 5.571 minade_k: 0.946 minfde_k: 1.616 mr_k: 0.235 brier_fde_k: 2.220 
+2025-10-20 06:51:59:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch8.tar
+2025-10-20 06:51:59:
+Epoch 9
+2025-10-20 06:56:07:[Training] Avg. loss: 0.792031, time cost: 4.13 mins, lr: 0.001, peak mem: 15519 MB
+2025-10-20 06:56:07:-- minade_1: 4.221 minfde_1: 9.513 mr_1: 0.830 brier_fde_1: 9.513 minade_k: 1.537 minfde_k: 2.575 mr_k: 0.419 brier_fde_k: 3.247 
+2025-10-20 06:58:48:[Validation] Avg. loss: 0.372146, time cost: 2.68 mins
+2025-10-20 06:58:48:-- minade_1: 2.402 minfde_1: 5.435 mr_1: 0.726 brier_fde_1: 5.435 minade_k: 0.924 minfde_k: 1.571 mr_k: 0.233 brier_fde_k: 2.185 
+2025-10-20 06:58:48:
+Training completed
+2025-10-20 07:07:00:[Round 4] add 5149 hard samples -> labeled=25745, pool=77226
+2025-10-20 07:07:00:
+========== Active Learning Round 5 ==========
+2025-10-20 07:07:00:[Round 5] labeled=25745, pool=77226
+2025-10-20 07:07:01:
+Epoch 0
+2025-10-20 07:12:12:[Training] Avg. loss: 5.48361, time cost: 5.18 mins, lr: 0.0001, peak mem: 14804 MB
+2025-10-20 07:12:12:-- minade_1: 13.615 minfde_1: 28.231 mr_1: 0.990 brier_fde_1: 28.231 minade_k: 10.945 minfde_k: 24.122 mr_k: 0.967 brier_fde_k: 24.839 
+2025-10-20 07:12:12:
+Epoch 1
+2025-10-20 07:17:22:[Training] Avg. loss: 1.62187, time cost: 5.17 mins, lr: 0.00028, peak mem: 15115 MB
+2025-10-20 07:17:22:-- minade_1: 6.369 minfde_1: 14.308 mr_1: 0.895 brier_fde_1: 14.308 minade_k: 3.253 minfde_k: 7.675 mr_k: 0.643 brier_fde_k: 8.347 
+2025-10-20 07:20:04:[Validation] Avg. loss: 0.463693, time cost: 2.7 mins
+2025-10-20 07:20:04:-- minade_1: 2.784 minfde_1: 6.331 mr_1: 0.764 brier_fde_1: 6.331 minade_k: 1.135 minfde_k: 2.150 mr_k: 0.318 brier_fde_k: 2.774 
+2025-10-20 07:20:04:
+Epoch 2
+2025-10-20 07:25:16:[Training] Avg. loss: 0.934759, time cost: 5.18 mins, lr: 0.00046, peak mem: 16306 MB
+2025-10-20 07:25:16:-- minade_1: 4.359 minfde_1: 9.743 mr_1: 0.853 brier_fde_1: 9.743 minade_k: 1.820 minfde_k: 3.396 mr_k: 0.472 brier_fde_k: 4.078 
+2025-10-20 07:25:16:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch2.tar
+2025-10-20 07:25:16:
+Epoch 3
+2025-10-20 07:30:27:[Training] Avg. loss: 0.85967, time cost: 5.18 mins, lr: 0.00064, peak mem: 14950 MB
+2025-10-20 07:30:27:-- minade_1: 4.260 minfde_1: 9.506 mr_1: 0.846 brier_fde_1: 9.506 minade_k: 1.670 minfde_k: 2.979 mr_k: 0.457 brier_fde_k: 3.662 
+2025-10-20 07:33:09:[Validation] Avg. loss: 0.440536, time cost: 2.7 mins
+2025-10-20 07:33:09:-- minade_1: 4.169 minfde_1: 9.137 mr_1: 0.897 brier_fde_1: 9.137 minade_k: 1.094 minfde_k: 1.899 mr_k: 0.329 brier_fde_k: 2.576 
+2025-10-20 07:33:09:
+Epoch 4
+2025-10-20 07:38:19:[Training] Avg. loss: 0.835223, time cost: 5.17 mins, lr: 0.00082, peak mem: 15891 MB
+2025-10-20 07:38:19:-- minade_1: 4.141 minfde_1: 9.233 mr_1: 0.839 brier_fde_1: 9.233 minade_k: 1.609 minfde_k: 2.801 mr_k: 0.438 brier_fde_k: 3.483 
+2025-10-20 07:38:19:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch4.tar
+2025-10-20 07:38:19:
+Epoch 5
+2025-10-20 07:43:30:[Training] Avg. loss: 0.820099, time cost: 5.18 mins, lr: 0.001, peak mem: 14970 MB
+2025-10-20 07:43:30:-- minade_1: 4.221 minfde_1: 9.431 mr_1: 0.845 brier_fde_1: 9.431 minade_k: 1.592 minfde_k: 2.780 mr_k: 0.439 brier_fde_k: 3.464 
+2025-10-20 07:46:12:[Validation] Avg. loss: 0.413645, time cost: 2.7 mins
+2025-10-20 07:46:12:-- minade_1: 2.686 minfde_1: 5.953 mr_1: 0.796 brier_fde_1: 5.953 minade_k: 1.014 minfde_k: 1.818 mr_k: 0.319 brier_fde_k: 2.460 
+2025-10-20 07:46:12:
+Epoch 6
+2025-10-20 07:51:23:[Training] Avg. loss: 0.791867, time cost: 5.17 mins, lr: 0.001, peak mem: 15682 MB
+2025-10-20 07:51:23:-- minade_1: 4.066 minfde_1: 9.127 mr_1: 0.835 brier_fde_1: 9.127 minade_k: 1.548 minfde_k: 2.678 mr_k: 0.422 brier_fde_k: 3.363 
+2025-10-20 07:54:05:[Validation] Avg. loss: 0.449022, time cost: 2.7 mins
+2025-10-20 07:54:05:-- minade_1: 2.975 minfde_1: 6.335 mr_1: 0.834 brier_fde_1: 6.335 minade_k: 1.098 minfde_k: 1.904 mr_k: 0.365 brier_fde_k: 2.500 
+2025-10-20 07:54:05:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch6.tar
+2025-10-20 07:54:05:
+Epoch 7
+2025-10-20 07:59:16:[Training] Avg. loss: 0.770327, time cost: 5.17 mins, lr: 0.001, peak mem: 15251 MB
+2025-10-20 07:59:16:-- minade_1: 4.032 minfde_1: 9.051 mr_1: 0.833 brier_fde_1: 9.051 minade_k: 1.512 minfde_k: 2.599 mr_k: 0.410 brier_fde_k: 3.283 
+2025-10-20 08:01:58:[Validation] Avg. loss: 0.373507, time cost: 2.7 mins
+2025-10-20 08:01:58:-- minade_1: 2.501 minfde_1: 5.576 mr_1: 0.716 brier_fde_1: 5.576 minade_k: 0.935 minfde_k: 1.593 mr_k: 0.235 brier_fde_k: 2.216 
+2025-10-20 08:01:58:
+Epoch 8
+2025-10-20 08:07:09:[Training] Avg. loss: 0.752947, time cost: 5.18 mins, lr: 0.001, peak mem: 14980 MB
+2025-10-20 08:07:09:-- minade_1: 4.017 minfde_1: 9.036 mr_1: 0.835 brier_fde_1: 9.036 minade_k: 1.485 minfde_k: 2.527 mr_k: 0.403 brier_fde_k: 3.208 
+2025-10-20 08:09:51:[Validation] Avg. loss: 0.36731, time cost: 2.7 mins
+2025-10-20 08:09:51:-- minade_1: 2.393 minfde_1: 5.407 mr_1: 0.715 brier_fde_1: 5.407 minade_k: 0.924 minfde_k: 1.541 mr_k: 0.213 brier_fde_k: 2.177 
+2025-10-20 08:09:51:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch8.tar
+2025-10-20 08:09:51:
+Epoch 9
+2025-10-20 08:15:02:[Training] Avg. loss: 0.745538, time cost: 5.18 mins, lr: 0.001, peak mem: 16627 MB
+2025-10-20 08:15:02:-- minade_1: 4.010 minfde_1: 9.046 mr_1: 0.828 brier_fde_1: 9.046 minade_k: 1.468 minfde_k: 2.479 mr_k: 0.393 brier_fde_k: 3.158 
+2025-10-20 08:17:45:[Validation] Avg. loss: 0.394381, time cost: 2.7 mins
+2025-10-20 08:17:45:-- minade_1: 2.307 minfde_1: 5.182 mr_1: 0.732 brier_fde_1: 5.182 minade_k: 0.972 minfde_k: 1.724 mr_k: 0.290 brier_fde_k: 2.317 
+2025-10-20 08:17:45:
+Training completed
+2025-10-20 08:25:30:[Round 5] add 5149 hard samples -> labeled=30894, pool=72077
+2025-10-20 08:25:30:
+========== Active Learning Round 6 ==========
+2025-10-20 08:25:30:[Round 6] labeled=30894, pool=72077
+2025-10-20 08:25:30:
+Epoch 0
+2025-10-20 08:31:41:[Training] Avg. loss: 4.95854, time cost: 6.17 mins, lr: 0.0001, peak mem: 15144 MB
+2025-10-20 08:31:41:-- minade_1: 12.510 minfde_1: 26.518 mr_1: 0.983 brier_fde_1: 26.518 minade_k: 9.987 minfde_k: 22.717 mr_k: 0.956 brier_fde_k: 23.305 
+2025-10-20 08:31:41:
+Epoch 1
+2025-10-20 08:37:52:[Training] Avg. loss: 1.44187, time cost: 6.18 mins, lr: 0.00028, peak mem: 14933 MB
+2025-10-20 08:37:52:-- minade_1: 5.714 minfde_1: 12.805 mr_1: 0.878 brier_fde_1: 12.805 minade_k: 2.973 minfde_k: 6.887 mr_k: 0.639 brier_fde_k: 7.522 
+2025-10-20 08:40:34:[Validation] Avg. loss: 0.508201, time cost: 2.71 mins
+2025-10-20 08:40:34:-- minade_1: 3.031 minfde_1: 6.687 mr_1: 0.752 brier_fde_1: 6.687 minade_k: 1.260 minfde_k: 2.500 mr_k: 0.385 brier_fde_k: 3.107 
+2025-10-20 08:40:34:
+Epoch 2
+2025-10-20 08:46:45:[Training] Avg. loss: 0.872038, time cost: 6.18 mins, lr: 0.00046, peak mem: 14367 MB
+2025-10-20 08:46:45:-- minade_1: 4.341 minfde_1: 9.682 mr_1: 0.848 brier_fde_1: 9.682 minade_k: 1.733 minfde_k: 3.219 mr_k: 0.451 brier_fde_k: 3.903 
+2025-10-20 08:46:45:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch2.tar
+2025-10-20 08:46:45:
+Epoch 3
+2025-10-20 08:52:56:[Training] Avg. loss: 0.794518, time cost: 6.18 mins, lr: 0.00064, peak mem: 14959 MB
+2025-10-20 08:52:56:-- minade_1: 4.093 minfde_1: 9.139 mr_1: 0.838 brier_fde_1: 9.139 minade_k: 1.567 minfde_k: 2.746 mr_k: 0.422 brier_fde_k: 3.424 
+2025-10-20 08:55:39:[Validation] Avg. loss: 0.408541, time cost: 2.71 mins
+2025-10-20 08:55:39:-- minade_1: 2.491 minfde_1: 5.600 mr_1: 0.772 brier_fde_1: 5.600 minade_k: 0.970 minfde_k: 1.664 mr_k: 0.244 brier_fde_k: 2.282 
+2025-10-20 08:55:39:
+Epoch 4
+2025-10-20 09:01:51:[Training] Avg. loss: 0.759643, time cost: 6.19 mins, lr: 0.00082, peak mem: 15597 MB
+2025-10-20 09:01:51:-- minade_1: 4.074 minfde_1: 9.136 mr_1: 0.837 brier_fde_1: 9.136 minade_k: 1.511 minfde_k: 2.612 mr_k: 0.408 brier_fde_k: 3.290 
+2025-10-20 09:01:51:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch4.tar
+2025-10-20 09:01:51:
+Epoch 5
+2025-10-20 09:08:02:[Training] Avg. loss: 0.749699, time cost: 6.18 mins, lr: 0.001, peak mem: 16013 MB
+2025-10-20 09:08:02:-- minade_1: 3.997 minfde_1: 8.963 mr_1: 0.835 brier_fde_1: 8.963 minade_k: 1.475 minfde_k: 2.524 mr_k: 0.403 brier_fde_k: 3.199 
+2025-10-20 09:10:44:[Validation] Avg. loss: 0.410041, time cost: 2.71 mins
+2025-10-20 09:10:44:-- minade_1: 2.766 minfde_1: 6.183 mr_1: 0.732 brier_fde_1: 6.183 minade_k: 1.013 minfde_k: 1.791 mr_k: 0.328 brier_fde_k: 2.378 
+2025-10-20 09:10:44:
+Epoch 6
+2025-10-20 09:16:55:[Training] Avg. loss: 0.727195, time cost: 6.17 mins, lr: 0.001, peak mem: 15028 MB
+2025-10-20 09:16:55:-- minade_1: 3.924 minfde_1: 8.804 mr_1: 0.825 brier_fde_1: 8.804 minade_k: 1.441 minfde_k: 2.453 mr_k: 0.388 brier_fde_k: 3.127 
+2025-10-20 09:19:38:[Validation] Avg. loss: 0.391921, time cost: 2.71 mins
+2025-10-20 09:19:38:-- minade_1: 2.661 minfde_1: 5.914 mr_1: 0.749 brier_fde_1: 5.914 minade_k: 0.980 minfde_k: 1.734 mr_k: 0.274 brier_fde_k: 2.360 
+2025-10-20 09:19:38:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch6.tar
+2025-10-20 09:19:38:
+Epoch 7
+2025-10-20 09:25:49:[Training] Avg. loss: 0.709407, time cost: 6.18 mins, lr: 0.001, peak mem: 15219 MB
+2025-10-20 09:25:49:-- minade_1: 3.774 minfde_1: 8.494 mr_1: 0.816 brier_fde_1: 8.494 minade_k: 1.419 minfde_k: 2.393 mr_k: 0.378 brier_fde_k: 3.061 
+2025-10-20 09:28:31:[Validation] Avg. loss: 0.395347, time cost: 2.71 mins
+2025-10-20 09:28:31:-- minade_1: 2.815 minfde_1: 6.144 mr_1: 0.753 brier_fde_1: 6.144 minade_k: 0.984 minfde_k: 1.655 mr_k: 0.267 brier_fde_k: 2.258 
+2025-10-20 09:28:31:
+Epoch 8
+2025-10-20 09:34:42:[Training] Avg. loss: 0.696988, time cost: 6.18 mins, lr: 0.001, peak mem: 14611 MB
+2025-10-20 09:34:42:-- minade_1: 3.782 minfde_1: 8.535 mr_1: 0.823 brier_fde_1: 8.535 minade_k: 1.394 minfde_k: 2.338 mr_k: 0.371 brier_fde_k: 3.009 
+2025-10-20 09:37:25:[Validation] Avg. loss: 0.371753, time cost: 2.71 mins
+2025-10-20 09:37:25:-- minade_1: 2.449 minfde_1: 5.546 mr_1: 0.767 brier_fde_1: 5.546 minade_k: 0.928 minfde_k: 1.534 mr_k: 0.208 brier_fde_k: 2.146 
+2025-10-20 09:37:25:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch8.tar
+2025-10-20 09:37:25:
+Epoch 9
+2025-10-20 09:43:36:[Training] Avg. loss: 0.681168, time cost: 6.18 mins, lr: 0.001, peak mem: 14802 MB
+2025-10-20 09:43:36:-- minade_1: 3.678 minfde_1: 8.328 mr_1: 0.816 brier_fde_1: 8.328 minade_k: 1.371 minfde_k: 2.297 mr_k: 0.359 brier_fde_k: 2.967 
+2025-10-20 09:46:19:[Validation] Avg. loss: 0.354794, time cost: 2.71 mins
+2025-10-20 09:46:19:-- minade_1: 3.151 minfde_1: 7.321 mr_1: 0.829 brier_fde_1: 7.321 minade_k: 0.890 minfde_k: 1.497 mr_k: 0.194 brier_fde_k: 2.160 
+2025-10-20 09:46:19:
+Training completed
+2025-10-20 09:53:33:[Round 6] add 5149 hard samples -> labeled=36043, pool=66928
+2025-10-20 09:53:33:
+========== Active Learning Round 7 ==========
+2025-10-20 09:53:33:[Round 7] labeled=36043, pool=66928
+2025-10-20 09:53:33:
+Epoch 0
+2025-10-20 10:00:47:[Training] Avg. loss: 4.44296, time cost: 7.22 mins, lr: 0.0001, peak mem: 14890 MB
+2025-10-20 10:00:47:-- minade_1: 12.467 minfde_1: 26.460 mr_1: 0.982 brier_fde_1: 26.460 minade_k: 9.004 minfde_k: 22.011 mr_k: 0.947 brier_fde_k: 22.712 
+2025-10-20 10:00:47:
+Epoch 1
+2025-10-20 10:08:01:[Training] Avg. loss: 1.11359, time cost: 7.23 mins, lr: 0.00028, peak mem: 14504 MB
+2025-10-20 10:08:01:-- minade_1: 4.735 minfde_1: 10.852 mr_1: 0.856 brier_fde_1: 10.852 minade_k: 2.263 minfde_k: 5.202 mr_k: 0.553 brier_fde_k: 5.832 
+2025-10-20 10:10:45:[Validation] Avg. loss: 0.465643, time cost: 2.73 mins
+2025-10-20 10:10:45:-- minade_1: 3.010 minfde_1: 6.544 mr_1: 0.827 brier_fde_1: 6.544 minade_k: 1.129 minfde_k: 1.972 mr_k: 0.306 brier_fde_k: 2.641 
+2025-10-20 10:10:45:
+Epoch 2
+2025-10-20 10:17:58:[Training] Avg. loss: 0.766302, time cost: 7.22 mins, lr: 0.00046, peak mem: 15007 MB
+2025-10-20 10:17:58:-- minade_1: 3.816 minfde_1: 8.536 mr_1: 0.827 brier_fde_1: 8.536 minade_k: 1.530 minfde_k: 2.732 mr_k: 0.405 brier_fde_k: 3.401 
+2025-10-20 10:17:58:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch2.tar
+2025-10-20 10:17:58:
+Epoch 3
+2025-10-20 10:25:12:[Training] Avg. loss: 0.717967, time cost: 7.23 mins, lr: 0.00064, peak mem: 14586 MB
+2025-10-20 10:25:12:-- minade_1: 3.701 minfde_1: 8.281 mr_1: 0.821 brier_fde_1: 8.281 minade_k: 1.440 minfde_k: 2.477 mr_k: 0.386 brier_fde_k: 3.145 
+2025-10-20 10:27:56:[Validation] Avg. loss: 0.387778, time cost: 2.73 mins
+2025-10-20 10:27:56:-- minade_1: 2.648 minfde_1: 5.810 mr_1: 0.759 brier_fde_1: 5.810 minade_k: 0.956 minfde_k: 1.624 mr_k: 0.242 brier_fde_k: 2.257 
+2025-10-20 10:27:56:
+Epoch 4
+2025-10-20 10:35:10:[Training] Avg. loss: 0.706086, time cost: 7.23 mins, lr: 0.00082, peak mem: 15907 MB
+2025-10-20 10:35:10:-- minade_1: 3.733 minfde_1: 8.351 mr_1: 0.821 brier_fde_1: 8.351 minade_k: 1.414 minfde_k: 2.403 mr_k: 0.375 brier_fde_k: 3.074 
+2025-10-20 10:35:10:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch4.tar
+2025-10-20 10:35:10:
+Epoch 5
+2025-10-20 10:42:24:[Training] Avg. loss: 0.691769, time cost: 7.22 mins, lr: 0.001, peak mem: 15013 MB
+2025-10-20 10:42:24:-- minade_1: 3.706 minfde_1: 8.324 mr_1: 0.826 brier_fde_1: 8.324 minade_k: 1.388 minfde_k: 2.358 mr_k: 0.375 brier_fde_k: 3.028 
+2025-10-20 10:45:07:[Validation] Avg. loss: 0.394353, time cost: 2.73 mins
+2025-10-20 10:45:07:-- minade_1: 2.812 minfde_1: 6.234 mr_1: 0.782 brier_fde_1: 6.234 minade_k: 0.966 minfde_k: 1.666 mr_k: 0.244 brier_fde_k: 2.349 
+2025-10-20 10:45:07:
+Epoch 6
+2025-10-20 10:52:21:[Training] Avg. loss: 0.673554, time cost: 7.22 mins, lr: 0.001, peak mem: 15061 MB
+2025-10-20 10:52:21:-- minade_1: 3.592 minfde_1: 8.086 mr_1: 0.813 brier_fde_1: 8.086 minade_k: 1.360 minfde_k: 2.294 mr_k: 0.356 brier_fde_k: 2.964 
+2025-10-20 10:55:05:[Validation] Avg. loss: 0.380925, time cost: 2.74 mins
+2025-10-20 10:55:05:-- minade_1: 2.120 minfde_1: 4.806 mr_1: 0.700 brier_fde_1: 4.806 minade_k: 0.925 minfde_k: 1.591 mr_k: 0.212 brier_fde_k: 2.194 
+2025-10-20 10:55:05:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch6.tar
+2025-10-20 10:55:05:
+Epoch 7
+2025-10-20 11:02:18:[Training] Avg. loss: 0.656115, time cost: 7.22 mins, lr: 0.001, peak mem: 14172 MB
+2025-10-20 11:02:18:-- minade_1: 3.549 minfde_1: 8.015 mr_1: 0.811 brier_fde_1: 8.015 minade_k: 1.330 minfde_k: 2.233 mr_k: 0.346 brier_fde_k: 2.898 
+2025-10-20 11:05:02:[Validation] Avg. loss: 0.362, time cost: 2.73 mins
+2025-10-20 11:05:02:-- minade_1: 2.693 minfde_1: 6.052 mr_1: 0.738 brier_fde_1: 6.052 minade_k: 0.910 minfde_k: 1.515 mr_k: 0.213 brier_fde_k: 2.148 
+2025-10-20 11:05:02:
+Epoch 8
+2025-10-20 11:12:16:[Training] Avg. loss: 0.646135, time cost: 7.23 mins, lr: 0.001, peak mem: 15465 MB
+2025-10-20 11:12:16:-- minade_1: 3.476 minfde_1: 7.885 mr_1: 0.806 brier_fde_1: 7.885 minade_k: 1.314 minfde_k: 2.186 mr_k: 0.342 brier_fde_k: 2.848 
+2025-10-20 11:15:00:[Validation] Avg. loss: 0.378473, time cost: 2.73 mins
+2025-10-20 11:15:00:-- minade_1: 2.110 minfde_1: 4.665 mr_1: 0.732 brier_fde_1: 4.665 minade_k: 0.928 minfde_k: 1.545 mr_k: 0.206 brier_fde_k: 2.144 
+2025-10-20 11:15:00:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch8.tar
+2025-10-20 11:15:00:
+Epoch 9
+2025-10-20 11:22:14:[Training] Avg. loss: 0.639109, time cost: 7.22 mins, lr: 0.001, peak mem: 15554 MB
+2025-10-20 11:22:14:-- minade_1: 3.424 minfde_1: 7.756 mr_1: 0.799 brier_fde_1: 7.756 minade_k: 1.298 minfde_k: 2.145 mr_k: 0.333 brier_fde_k: 2.804 
+2025-10-20 11:24:58:[Validation] Avg. loss: 0.344598, time cost: 2.73 mins
+2025-10-20 11:24:58:-- minade_1: 2.184 minfde_1: 4.966 mr_1: 0.684 brier_fde_1: 4.966 minade_k: 0.865 minfde_k: 1.464 mr_k: 0.181 brier_fde_k: 2.072 
+2025-10-20 11:24:58:
+Training completed
+2025-10-20 11:31:44:[Round 7] add 5149 hard samples -> labeled=41192, pool=61779
+2025-10-20 11:31:44:
+========== Active Learning Round 8 ==========
+2025-10-20 11:31:44:[Round 8] labeled=41192, pool=61779
+2025-10-20 11:31:44:
+Epoch 0
+2025-10-20 11:39:59:[Training] Avg. loss: 4.04135, time cost: 8.24 mins, lr: 0.0001, peak mem: 14409 MB
+2025-10-20 11:39:59:-- minade_1: 11.184 minfde_1: 23.609 mr_1: 0.973 brier_fde_1: 23.609 minade_k: 8.359 minfde_k: 19.096 mr_k: 0.925 brier_fde_k: 19.779 
+2025-10-20 11:39:59:
+Epoch 1
+2025-10-20 11:48:13:[Training] Avg. loss: 0.961156, time cost: 8.24 mins, lr: 0.00028, peak mem: 15423 MB
+2025-10-20 11:48:13:-- minade_1: 4.544 minfde_1: 10.213 mr_1: 0.847 brier_fde_1: 10.213 minade_k: 1.994 minfde_k: 4.206 mr_k: 0.471 brier_fde_k: 4.884 
+2025-10-20 11:50:56:[Validation] Avg. loss: 0.463335, time cost: 2.71 mins
+2025-10-20 11:50:56:-- minade_1: 2.533 minfde_1: 5.537 mr_1: 0.764 brier_fde_1: 5.537 minade_k: 1.101 minfde_k: 1.790 mr_k: 0.268 brier_fde_k: 2.409 
+2025-10-20 11:50:56:
+Epoch 2
+2025-10-20 11:59:11:[Training] Avg. loss: 0.712528, time cost: 8.24 mins, lr: 0.00046, peak mem: 14822 MB
+2025-10-20 11:59:11:-- minade_1: 3.708 minfde_1: 8.310 mr_1: 0.823 brier_fde_1: 8.310 minade_k: 1.457 minfde_k: 2.567 mr_k: 0.381 brier_fde_k: 3.244 
+2025-10-20 11:59:11:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch2.tar
+2025-10-20 11:59:11:
+Epoch 3
+2025-10-21 12:07:26:[Training] Avg. loss: 0.696969, time cost: 8.25 mins, lr: 0.00064, peak mem: 14968 MB
+2025-10-21 12:07:26:-- minade_1: 3.589 minfde_1: 7.983 mr_1: 0.814 brier_fde_1: 7.983 minade_k: 1.414 minfde_k: 2.433 mr_k: 0.378 brier_fde_k: 3.105 
+2025-10-21 12:10:08:[Validation] Avg. loss: 0.387016, time cost: 2.71 mins
+2025-10-21 12:10:08:-- minade_1: 2.349 minfde_1: 5.343 mr_1: 0.711 brier_fde_1: 5.343 minade_k: 0.931 minfde_k: 1.602 mr_k: 0.224 brier_fde_k: 2.230 
+2025-10-21 12:10:08:
+Epoch 4
+2025-10-21 12:18:23:[Training] Avg. loss: 0.67736, time cost: 8.24 mins, lr: 0.00082, peak mem: 15167 MB
+2025-10-21 12:18:23:-- minade_1: 3.604 minfde_1: 8.026 mr_1: 0.817 brier_fde_1: 8.026 minade_k: 1.379 minfde_k: 2.369 mr_k: 0.371 brier_fde_k: 3.044 
+2025-10-21 12:18:23:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch4.tar
+2025-10-21 12:18:23:
+Epoch 5
+2025-10-21 12:26:38:[Training] Avg. loss: 0.678074, time cost: 8.25 mins, lr: 0.001, peak mem: 15106 MB
+2025-10-21 12:26:38:-- minade_1: 3.649 minfde_1: 8.127 mr_1: 0.818 brier_fde_1: 8.127 minade_k: 1.383 minfde_k: 2.354 mr_k: 0.373 brier_fde_k: 3.032 
+2025-10-21 12:29:20:[Validation] Avg. loss: 0.393297, time cost: 2.71 mins
+2025-10-21 12:29:20:-- minade_1: 2.424 minfde_1: 5.555 mr_1: 0.767 brier_fde_1: 5.555 minade_k: 0.949 minfde_k: 1.655 mr_k: 0.242 brier_fde_k: 2.287 
+2025-10-21 12:29:20:
+Epoch 6
+2025-10-21 12:37:35:[Training] Avg. loss: 0.654572, time cost: 8.24 mins, lr: 0.001, peak mem: 14767 MB
+2025-10-21 12:37:35:-- minade_1: 3.527 minfde_1: 7.894 mr_1: 0.807 brier_fde_1: 7.894 minade_k: 1.342 minfde_k: 2.275 mr_k: 0.354 brier_fde_k: 2.948 
+2025-10-21 12:40:17:[Validation] Avg. loss: 0.382419, time cost: 2.71 mins
+2025-10-21 12:40:17:-- minade_1: 2.290 minfde_1: 5.105 mr_1: 0.684 brier_fde_1: 5.105 minade_k: 0.929 minfde_k: 1.583 mr_k: 0.231 brier_fde_k: 2.201 
+2025-10-21 12:40:18:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch6.tar
+2025-10-21 12:40:18:
+Epoch 7
+2025-10-21 12:48:33:[Training] Avg. loss: 0.637028, time cost: 8.25 mins, lr: 0.001, peak mem: 15041 MB
+2025-10-21 12:48:33:-- minade_1: 3.468 minfde_1: 7.779 mr_1: 0.800 brier_fde_1: 7.779 minade_k: 1.313 minfde_k: 2.211 mr_k: 0.342 brier_fde_k: 2.881 
+2025-10-21 12:51:15:[Validation] Avg. loss: 0.360982, time cost: 2.71 mins
+2025-10-21 12:51:15:-- minade_1: 2.324 minfde_1: 5.211 mr_1: 0.715 brier_fde_1: 5.211 minade_k: 0.898 minfde_k: 1.499 mr_k: 0.197 brier_fde_k: 2.143 
+2025-10-21 12:51:15:
+Epoch 8
+2025-10-21 12:59:30:[Training] Avg. loss: 0.622313, time cost: 8.24 mins, lr: 0.001, peak mem: 15055 MB
+2025-10-21 12:59:30:-- minade_1: 3.520 minfde_1: 7.921 mr_1: 0.801 brier_fde_1: 7.921 minade_k: 1.295 minfde_k: 2.167 mr_k: 0.335 brier_fde_k: 2.838 
+2025-10-21 01:02:12:[Validation] Avg. loss: 0.35945, time cost: 2.71 mins
+2025-10-21 01:02:12:-- minade_1: 2.317 minfde_1: 5.225 mr_1: 0.728 brier_fde_1: 5.225 minade_k: 0.886 minfde_k: 1.418 mr_k: 0.178 brier_fde_k: 2.080 
+2025-10-21 01:02:12:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch8.tar
+2025-10-21 01:02:12:
+Epoch 9
+2025-10-21 01:10:27:[Training] Avg. loss: 0.604839, time cost: 8.24 mins, lr: 0.001, peak mem: 15228 MB
+2025-10-21 01:10:27:-- minade_1: 3.447 minfde_1: 7.789 mr_1: 0.796 brier_fde_1: 7.789 minade_k: 1.258 minfde_k: 2.088 mr_k: 0.319 brier_fde_k: 2.761 
+2025-10-21 01:13:10:[Validation] Avg. loss: 0.365611, time cost: 2.71 mins
+2025-10-21 01:13:10:-- minade_1: 2.071 minfde_1: 4.664 mr_1: 0.685 brier_fde_1: 4.664 minade_k: 0.912 minfde_k: 1.477 mr_k: 0.188 brier_fde_k: 2.096 
+2025-10-21 01:13:10:
+Training completed
+2025-10-21 01:19:21:[Round 8] add 5149 hard samples -> labeled=46341, pool=56630
+2025-10-21 01:19:21:
+========== Active Learning Round 9 ==========
+2025-10-21 01:19:21:[Round 9] labeled=46341, pool=56630
+2025-10-21 01:19:21:
+Epoch 0
+2025-10-21 01:28:42:[Training] Avg. loss: 3.58372, time cost: 9.33 mins, lr: 0.0001, peak mem: 15167 MB
+2025-10-21 01:28:42:-- minade_1: 10.833 minfde_1: 23.140 mr_1: 0.971 brier_fde_1: 23.140 minade_k: 7.578 minfde_k: 17.913 mr_k: 0.897 brier_fde_k: 18.596 
+2025-10-21 01:28:42:
+Epoch 1
+2025-10-21 01:38:02:[Training] Avg. loss: 0.841994, time cost: 9.34 mins, lr: 0.00028, peak mem: 15440 MB
+2025-10-21 01:38:02:-- minade_1: 4.198 minfde_1: 9.484 mr_1: 0.836 brier_fde_1: 9.484 minade_k: 1.757 minfde_k: 3.598 mr_k: 0.427 brier_fde_k: 4.266 
+2025-10-21 01:40:48:[Validation] Avg. loss: 0.402469, time cost: 2.76 mins
+2025-10-21 01:40:48:-- minade_1: 2.472 minfde_1: 5.647 mr_1: 0.713 brier_fde_1: 5.647 minade_k: 0.974 minfde_k: 1.656 mr_k: 0.222 brier_fde_k: 2.277 
+2025-10-21 01:40:48:
+Epoch 2
+2025-10-21 01:50:07:[Training] Avg. loss: 0.68174, time cost: 9.32 mins, lr: 0.00046, peak mem: 15444 MB
+2025-10-21 01:50:07:-- minade_1: 3.734 minfde_1: 8.361 mr_1: 0.824 brier_fde_1: 8.361 minade_k: 1.411 minfde_k: 2.476 mr_k: 0.376 brier_fde_k: 3.151 
+2025-10-21 01:50:07:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch2.tar
+2025-10-21 01:50:07:
+Epoch 3
+2025-10-21 01:59:28:[Training] Avg. loss: 0.645531, time cost: 9.33 mins, lr: 0.00064, peak mem: 15465 MB
+2025-10-21 01:59:28:-- minade_1: 3.680 minfde_1: 8.247 mr_1: 0.815 brier_fde_1: 8.247 minade_k: 1.341 minfde_k: 2.304 mr_k: 0.354 brier_fde_k: 2.977 
+2025-10-21 02:02:13:[Validation] Avg. loss: 0.36116, time cost: 2.75 mins
+2025-10-21 02:02:13:-- minade_1: 2.555 minfde_1: 5.760 mr_1: 0.732 brier_fde_1: 5.760 minade_k: 0.894 minfde_k: 1.514 mr_k: 0.199 brier_fde_k: 2.152 
+2025-10-21 02:02:13:
+Epoch 4
+2025-10-21 02:11:33:[Training] Avg. loss: 0.628036, time cost: 9.34 mins, lr: 0.00082, peak mem: 15260 MB
+2025-10-21 02:11:33:-- minade_1: 3.597 minfde_1: 8.064 mr_1: 0.811 brier_fde_1: 8.064 minade_k: 1.310 minfde_k: 2.233 mr_k: 0.347 brier_fde_k: 2.903 
+2025-10-21 02:11:34:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch4.tar
+2025-10-21 02:11:34:
+Epoch 5
+2025-10-21 02:20:54:[Training] Avg. loss: 0.620565, time cost: 9.33 mins, lr: 0.001, peak mem: 14953 MB
+2025-10-21 02:20:54:-- minade_1: 3.569 minfde_1: 8.022 mr_1: 0.815 brier_fde_1: 8.022 minade_k: 1.298 minfde_k: 2.208 mr_k: 0.344 brier_fde_k: 2.882 
+2025-10-21 02:23:39:[Validation] Avg. loss: 0.382839, time cost: 2.76 mins
+2025-10-21 02:23:39:-- minade_1: 2.320 minfde_1: 5.116 mr_1: 0.748 brier_fde_1: 5.116 minade_k: 0.954 minfde_k: 1.612 mr_k: 0.235 brier_fde_k: 2.301 
+2025-10-21 02:23:39:
+Epoch 6
+2025-10-21 02:32:59:[Training] Avg. loss: 0.60478, time cost: 9.32 mins, lr: 0.001, peak mem: 15235 MB
+2025-10-21 02:32:59:-- minade_1: 3.497 minfde_1: 7.866 mr_1: 0.809 brier_fde_1: 7.866 minade_k: 1.271 minfde_k: 2.141 mr_k: 0.334 brier_fde_k: 2.812 
+2025-10-21 02:35:44:[Validation] Avg. loss: 0.365372, time cost: 2.76 mins
+2025-10-21 02:35:44:-- minade_1: 2.571 minfde_1: 5.827 mr_1: 0.713 brier_fde_1: 5.827 minade_k: 0.914 minfde_k: 1.556 mr_k: 0.218 brier_fde_k: 2.168 
+2025-10-21 02:35:44:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch6.tar
+2025-10-21 02:35:44:
+Epoch 7
+2025-10-21 02:45:04:[Training] Avg. loss: 0.588174, time cost: 9.33 mins, lr: 0.001, peak mem: 14626 MB
+2025-10-21 02:45:04:-- minade_1: 3.439 minfde_1: 7.767 mr_1: 0.797 brier_fde_1: 7.767 minade_k: 1.241 minfde_k: 2.082 mr_k: 0.319 brier_fde_k: 2.753 
+2025-10-21 02:47:50:[Validation] Avg. loss: 0.348961, time cost: 2.76 mins
+2025-10-21 02:47:50:-- minade_1: 2.685 minfde_1: 6.183 mr_1: 0.763 brier_fde_1: 6.183 minade_k: 0.877 minfde_k: 1.476 mr_k: 0.207 brier_fde_k: 2.113 
+2025-10-21 02:47:50:
+Epoch 8
+2025-10-21 02:57:10:[Training] Avg. loss: 0.580619, time cost: 9.34 mins, lr: 0.001, peak mem: 16063 MB
+2025-10-21 02:57:10:-- minade_1: 3.380 minfde_1: 7.658 mr_1: 0.796 brier_fde_1: 7.658 minade_k: 1.231 minfde_k: 2.056 mr_k: 0.314 brier_fde_k: 2.723 
+2025-10-21 02:59:56:[Validation] Avg. loss: 0.358586, time cost: 2.76 mins
+2025-10-21 02:59:56:-- minade_1: 2.332 minfde_1: 5.378 mr_1: 0.709 brier_fde_1: 5.378 minade_k: 0.920 minfde_k: 1.452 mr_k: 0.191 brier_fde_k: 2.072 
+2025-10-21 02:59:56:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch8.tar
+2025-10-21 02:59:56:
+Epoch 9
+2025-10-21 03:09:16:[Training] Avg. loss: 0.569297, time cost: 9.32 mins, lr: 0.001, peak mem: 15038 MB
+2025-10-21 03:09:16:-- minade_1: 3.248 minfde_1: 7.383 mr_1: 0.791 brier_fde_1: 7.383 minade_k: 1.206 minfde_k: 2.010 mr_k: 0.307 brier_fde_k: 2.671 
+2025-10-21 03:12:01:[Validation] Avg. loss: 0.355289, time cost: 2.76 mins
+2025-10-21 03:12:01:-- minade_1: 2.359 minfde_1: 5.304 mr_1: 0.721 brier_fde_1: 5.304 minade_k: 0.898 minfde_k: 1.483 mr_k: 0.210 brier_fde_k: 2.105 
+2025-10-21 03:12:01:
+Training completed
+2025-10-21 03:17:46:[Round 9] add 5149 hard samples -> labeled=51490, pool=51481
+2025-10-21 03:17:46:
+========== Active Learning Round 10 ==========
+2025-10-21 03:17:46:[Round 10] labeled=51490, pool=51481
+2025-10-21 03:17:46:
+Epoch 0
+2025-10-21 03:28:08:[Training] Avg. loss: 3.25107, time cost: 10.4 mins, lr: 0.0001, peak mem: 14596 MB
+2025-10-21 03:28:08:-- minade_1: 9.947 minfde_1: 21.344 mr_1: 0.952 brier_fde_1: 21.344 minade_k: 6.929 minfde_k: 16.231 mr_k: 0.860 brier_fde_k: 16.881 
+2025-10-21 03:28:08:
+Epoch 1
+2025-10-21 03:38:29:[Training] Avg. loss: 0.75688, time cost: 10.4 mins, lr: 0.00028, peak mem: 15612 MB
+2025-10-21 03:38:29:-- minade_1: 3.867 minfde_1: 8.717 mr_1: 0.823 brier_fde_1: 8.717 minade_k: 1.603 minfde_k: 3.125 mr_k: 0.390 brier_fde_k: 3.796 
+2025-10-21 03:41:15:[Validation] Avg. loss: 0.399695, time cost: 2.76 mins
+2025-10-21 03:41:15:-- minade_1: 3.267 minfde_1: 7.212 mr_1: 0.773 brier_fde_1: 7.212 minade_k: 0.981 minfde_k: 1.682 mr_k: 0.230 brier_fde_k: 2.338 
+2025-10-21 03:41:15:
+Epoch 2
+2025-10-21 03:51:37:[Training] Avg. loss: 0.635746, time cost: 10.4 mins, lr: 0.00046, peak mem: 15190 MB
+2025-10-21 03:51:37:-- minade_1: 3.387 minfde_1: 7.581 mr_1: 0.803 brier_fde_1: 7.581 minade_k: 1.343 minfde_k: 2.347 mr_k: 0.348 brier_fde_k: 3.014 
+2025-10-21 03:51:37:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch2.tar
+2025-10-21 03:51:37:
+Epoch 3
+2025-10-21 04:02:00:[Training] Avg. loss: 0.609991, time cost: 10.4 mins, lr: 0.00064, peak mem: 15043 MB
+2025-10-21 04:02:00:-- minade_1: 3.279 minfde_1: 7.322 mr_1: 0.794 brier_fde_1: 7.322 minade_k: 1.292 minfde_k: 2.213 mr_k: 0.339 brier_fde_k: 2.877 
+2025-10-21 04:04:45:[Validation] Avg. loss: 0.399201, time cost: 2.76 mins
+2025-10-21 04:04:45:-- minade_1: 2.186 minfde_1: 4.720 mr_1: 0.714 brier_fde_1: 4.720 minade_k: 0.992 minfde_k: 1.592 mr_k: 0.212 brier_fde_k: 2.203 
+2025-10-21 04:04:45:
+Epoch 4
+2025-10-21 04:15:07:[Training] Avg. loss: 0.599178, time cost: 10.4 mins, lr: 0.00082, peak mem: 14651 MB
+2025-10-21 04:15:07:-- minade_1: 3.307 minfde_1: 7.406 mr_1: 0.798 brier_fde_1: 7.406 minade_k: 1.273 minfde_k: 2.166 mr_k: 0.327 brier_fde_k: 2.834 
+2025-10-21 04:15:07:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch4.tar
+2025-10-21 04:15:07:
+Epoch 5
+2025-10-21 04:25:29:[Training] Avg. loss: 0.591994, time cost: 10.4 mins, lr: 0.001, peak mem: 15805 MB
+2025-10-21 04:25:29:-- minade_1: 3.355 minfde_1: 7.538 mr_1: 0.800 brier_fde_1: 7.538 minade_k: 1.263 minfde_k: 2.140 mr_k: 0.324 brier_fde_k: 2.809 
+2025-10-21 04:28:14:[Validation] Avg. loss: 0.371798, time cost: 2.76 mins
+2025-10-21 04:28:14:-- minade_1: 2.451 minfde_1: 5.380 mr_1: 0.704 brier_fde_1: 5.380 minade_k: 0.934 minfde_k: 1.571 mr_k: 0.217 brier_fde_k: 2.177 
+2025-10-21 04:28:15:
+Epoch 6
+2025-10-21 04:38:37:[Training] Avg. loss: 0.575716, time cost: 10.4 mins, lr: 0.001, peak mem: 15593 MB
+2025-10-21 04:38:37:-- minade_1: 3.274 minfde_1: 7.378 mr_1: 0.790 brier_fde_1: 7.378 minade_k: 1.232 minfde_k: 2.083 mr_k: 0.314 brier_fde_k: 2.749 
+2025-10-21 04:41:22:[Validation] Avg. loss: 0.37898, time cost: 2.76 mins
+2025-10-21 04:41:22:-- minade_1: 2.541 minfde_1: 5.578 mr_1: 0.748 brier_fde_1: 5.578 minade_k: 0.942 minfde_k: 1.618 mr_k: 0.235 brier_fde_k: 2.268 
+2025-10-21 04:41:22:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch6.tar
+2025-10-21 04:41:22:
+Epoch 7
+2025-10-21 04:51:44:[Training] Avg. loss: 0.560664, time cost: 10.4 mins, lr: 0.001, peak mem: 14839 MB
+2025-10-21 04:51:44:-- minade_1: 3.205 minfde_1: 7.248 mr_1: 0.785 brier_fde_1: 7.248 minade_k: 1.207 minfde_k: 2.017 mr_k: 0.301 brier_fde_k: 2.678 
+2025-10-21 04:54:30:[Validation] Avg. loss: 0.350799, time cost: 2.76 mins
+2025-10-21 04:54:30:-- minade_1: 2.054 minfde_1: 4.675 mr_1: 0.688 brier_fde_1: 4.675 minade_k: 0.869 minfde_k: 1.411 mr_k: 0.178 brier_fde_k: 2.036 
+2025-10-21 04:54:30:
+Epoch 8
+2025-10-21 05:04:52:[Training] Avg. loss: 0.55155, time cost: 10.4 mins, lr: 0.001, peak mem: 15592 MB
+2025-10-21 05:04:52:-- minade_1: 3.124 minfde_1: 7.067 mr_1: 0.778 brier_fde_1: 7.067 minade_k: 1.190 minfde_k: 1.976 mr_k: 0.292 brier_fde_k: 2.636 
+2025-10-21 05:07:37:[Validation] Avg. loss: 0.341635, time cost: 2.76 mins
+2025-10-21 05:07:37:-- minade_1: 2.239 minfde_1: 5.074 mr_1: 0.678 brier_fde_1: 5.074 minade_k: 0.870 minfde_k: 1.451 mr_k: 0.187 brier_fde_k: 2.100 
+2025-10-21 05:07:37:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch8.tar
+2025-10-21 05:07:37:
+Epoch 9
+2025-10-21 05:17:59:[Training] Avg. loss: 0.545306, time cost: 10.4 mins, lr: 0.001, peak mem: 14838 MB
+2025-10-21 05:17:59:-- minade_1: 3.107 minfde_1: 7.047 mr_1: 0.775 brier_fde_1: 7.047 minade_k: 1.177 minfde_k: 1.952 mr_k: 0.289 brier_fde_k: 2.607 
+2025-10-21 05:20:45:[Validation] Avg. loss: 0.335877, time cost: 2.76 mins
+2025-10-21 05:20:45:-- minade_1: 1.864 minfde_1: 4.235 mr_1: 0.639 brier_fde_1: 4.235 minade_k: 0.844 minfde_k: 1.368 mr_k: 0.159 brier_fde_k: 1.965 
+2025-10-21 05:20:45:
+Training completed
+2025-10-21 05:25:58:[Round 10] add 5149 hard samples -> labeled=56639, pool=46332
+2025-10-21 05:25:58:
+========== Active Learning Round 11 ==========
+2025-10-21 05:25:58:[Round 11] labeled=56639, pool=46332
+2025-10-21 05:25:58:
+Epoch 0
+2025-10-21 05:37:17:[Training] Avg. loss: 2.95821, time cost: 11.3 mins, lr: 0.0001, peak mem: 14888 MB
+2025-10-21 05:37:17:-- minade_1: 9.192 minfde_1: 20.136 mr_1: 0.942 brier_fde_1: 20.136 minade_k: 6.470 minfde_k: 15.726 mr_k: 0.839 brier_fde_k: 16.331 
+2025-10-21 05:37:17:
+Epoch 1
+2025-10-21 05:48:37:[Training] Avg. loss: 0.690168, time cost: 11.3 mins, lr: 0.00028, peak mem: 15727 MB
+2025-10-21 05:48:37:-- minade_1: 3.542 minfde_1: 7.980 mr_1: 0.807 brier_fde_1: 7.980 minade_k: 1.496 minfde_k: 2.880 mr_k: 0.367 brier_fde_k: 3.533 
+2025-10-21 05:51:19:[Validation] Avg. loss: 0.398583, time cost: 2.71 mins
+2025-10-21 05:51:19:-- minade_1: 2.072 minfde_1: 4.668 mr_1: 0.680 brier_fde_1: 4.668 minade_k: 0.964 minfde_k: 1.625 mr_k: 0.227 brier_fde_k: 2.235 
+2025-10-21 05:51:19:
+Epoch 2
+2025-10-21 06:02:39:[Training] Avg. loss: 0.586942, time cost: 11.3 mins, lr: 0.00046, peak mem: 15445 MB
+2025-10-21 06:02:39:-- minade_1: 3.404 minfde_1: 7.614 mr_1: 0.799 brier_fde_1: 7.614 minade_k: 1.275 minfde_k: 2.204 mr_k: 0.323 brier_fde_k: 2.873 
+2025-10-21 06:02:39:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch2.tar
+2025-10-21 06:02:39:
+Epoch 3
+2025-10-21 06:13:59:[Training] Avg. loss: 0.566061, time cost: 11.3 mins, lr: 0.00064, peak mem: 14875 MB
+2025-10-21 06:13:59:-- minade_1: 3.349 minfde_1: 7.496 mr_1: 0.799 brier_fde_1: 7.496 minade_k: 1.234 minfde_k: 2.095 mr_k: 0.316 brier_fde_k: 2.764 
+2025-10-21 06:16:42:[Validation] Avg. loss: 0.356639, time cost: 2.71 mins
+2025-10-21 06:16:42:-- minade_1: 2.086 minfde_1: 4.687 mr_1: 0.690 brier_fde_1: 4.687 minade_k: 0.874 minfde_k: 1.471 mr_k: 0.181 brier_fde_k: 2.100 
+2025-10-21 06:16:42:
+Epoch 4
+2025-10-21 06:28:02:[Training] Avg. loss: 0.560326, time cost: 11.3 mins, lr: 0.00082, peak mem: 14920 MB
+2025-10-21 06:28:02:-- minade_1: 3.307 minfde_1: 7.412 mr_1: 0.795 brier_fde_1: 7.412 minade_k: 1.222 minfde_k: 2.063 mr_k: 0.309 brier_fde_k: 2.735 
+2025-10-21 06:28:02:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch4.tar
+2025-10-21 06:28:02:
+Epoch 5
+2025-10-21 06:39:22:[Training] Avg. loss: 0.548959, time cost: 11.3 mins, lr: 0.001, peak mem: 15031 MB
+2025-10-21 06:39:22:-- minade_1: 3.255 minfde_1: 7.316 mr_1: 0.790 brier_fde_1: 7.316 minade_k: 1.200 minfde_k: 2.014 mr_k: 0.301 brier_fde_k: 2.682 
+2025-10-21 06:42:04:[Validation] Avg. loss: 0.359434, time cost: 2.71 mins
+2025-10-21 06:42:04:-- minade_1: 2.178 minfde_1: 4.876 mr_1: 0.700 brier_fde_1: 4.876 minade_k: 0.914 minfde_k: 1.440 mr_k: 0.177 brier_fde_k: 2.090 
+2025-10-21 06:42:05:
+Epoch 6
+2025-10-21 06:53:25:[Training] Avg. loss: 0.530196, time cost: 11.3 mins, lr: 0.001, peak mem: 15819 MB
+2025-10-21 06:53:25:-- minade_1: 3.109 minfde_1: 7.000 mr_1: 0.780 brier_fde_1: 7.000 minade_k: 1.168 minfde_k: 1.940 mr_k: 0.284 brier_fde_k: 2.601 
+2025-10-21 06:56:07:[Validation] Avg. loss: 0.351518, time cost: 2.71 mins
+2025-10-21 06:56:07:-- minade_1: 2.406 minfde_1: 5.354 mr_1: 0.717 brier_fde_1: 5.354 minade_k: 0.898 minfde_k: 1.479 mr_k: 0.207 brier_fde_k: 2.097 
+2025-10-21 06:56:07:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch6.tar
+2025-10-21 06:56:07:
+Epoch 7
+2025-10-21 07:07:26:[Training] Avg. loss: 0.518622, time cost: 11.3 mins, lr: 0.001, peak mem: 15385 MB
+2025-10-21 07:07:26:-- minade_1: 3.049 minfde_1: 6.887 mr_1: 0.773 brier_fde_1: 6.887 minade_k: 1.144 minfde_k: 1.882 mr_k: 0.272 brier_fde_k: 2.542 
+2025-10-21 07:10:09:[Validation] Avg. loss: 0.363784, time cost: 2.71 mins
+2025-10-21 07:10:09:-- minade_1: 3.021 minfde_1: 6.601 mr_1: 0.813 brier_fde_1: 6.601 minade_k: 0.911 minfde_k: 1.508 mr_k: 0.203 brier_fde_k: 2.178 
+2025-10-21 07:10:09:
+Epoch 8
+2025-10-21 07:21:28:[Training] Avg. loss: 0.50798, time cost: 11.3 mins, lr: 0.001, peak mem: 15697 MB
+2025-10-21 07:21:28:-- minade_1: 2.982 minfde_1: 6.739 mr_1: 0.763 brier_fde_1: 6.739 minade_k: 1.133 minfde_k: 1.860 mr_k: 0.269 brier_fde_k: 2.514 
+2025-10-21 07:24:11:[Validation] Avg. loss: 0.325353, time cost: 2.71 mins
+2025-10-21 07:24:11:-- minade_1: 1.996 minfde_1: 4.492 mr_1: 0.652 brier_fde_1: 4.492 minade_k: 0.831 minfde_k: 1.341 mr_k: 0.159 brier_fde_k: 1.945 
+2025-10-21 07:24:11:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch8.tar
+2025-10-21 07:24:11:
+Epoch 9
+2025-10-21 07:35:30:[Training] Avg. loss: 0.502086, time cost: 11.3 mins, lr: 0.001, peak mem: 15927 MB
+2025-10-21 07:35:30:-- minade_1: 2.915 minfde_1: 6.597 mr_1: 0.756 brier_fde_1: 6.597 minade_k: 1.115 minfde_k: 1.823 mr_k: 0.260 brier_fde_k: 2.475 
+2025-10-21 07:38:13:[Validation] Avg. loss: 0.331897, time cost: 2.71 mins
+2025-10-21 07:38:13:-- minade_1: 1.968 minfde_1: 4.425 mr_1: 0.637 brier_fde_1: 4.425 minade_k: 0.824 minfde_k: 1.351 mr_k: 0.156 brier_fde_k: 1.948 
+2025-10-21 07:38:13:
+Training completed
+2025-10-21 07:42:52:[Round 11] add 5148 hard samples -> labeled=61787, pool=41184
+2025-10-21 07:42:52:
+========== Active Learning Round 12 ==========
+2025-10-21 07:42:52:[Round 12] labeled=61787, pool=41184
+2025-10-21 07:42:52:
+Epoch 0
+2025-10-21 07:55:18:[Training] Avg. loss: 2.66533, time cost: 12.4 mins, lr: 0.0001, peak mem: 15389 MB
+2025-10-21 07:55:18:-- minade_1: 8.169 minfde_1: 18.391 mr_1: 0.933 brier_fde_1: 18.391 minade_k: 5.926 minfde_k: 14.766 mr_k: 0.827 brier_fde_k: 15.351 
+2025-10-21 07:55:18:
+Epoch 1
+2025-10-21 08:07:43:[Training] Avg. loss: 0.653401, time cost: 12.4 mins, lr: 0.00028, peak mem: 14857 MB
+2025-10-21 08:07:43:-- minade_1: 3.357 minfde_1: 7.558 mr_1: 0.797 brier_fde_1: 7.558 minade_k: 1.436 minfde_k: 2.729 mr_k: 0.362 brier_fde_k: 3.373 
+2025-10-21 08:10:28:[Validation] Avg. loss: 0.391621, time cost: 2.76 mins
+2025-10-21 08:10:28:-- minade_1: 2.374 minfde_1: 5.197 mr_1: 0.723 brier_fde_1: 5.197 minade_k: 0.954 minfde_k: 1.625 mr_k: 0.234 brier_fde_k: 2.242 
+2025-10-21 08:10:28:
+Epoch 2
+2025-10-21 08:23:31:[Training] Avg. loss: 0.55342, time cost: 13.0 mins, lr: 0.00046, peak mem: 15645 MB
+2025-10-21 08:23:31:-- minade_1: 3.206 minfde_1: 7.181 mr_1: 0.787 brier_fde_1: 7.181 minade_k: 1.225 minfde_k: 2.101 mr_k: 0.310 brier_fde_k: 2.763 
+2025-10-21 08:23:31:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch2.tar
+2025-10-21 08:23:31:
+Epoch 3
+2025-10-21 08:35:56:[Training] Avg. loss: 0.538077, time cost: 12.4 mins, lr: 0.00064, peak mem: 14688 MB
+2025-10-21 08:35:56:-- minade_1: 3.213 minfde_1: 7.221 mr_1: 0.789 brier_fde_1: 7.221 minade_k: 1.197 minfde_k: 2.028 mr_k: 0.303 brier_fde_k: 2.694 
+2025-10-21 08:38:42:[Validation] Avg. loss: 0.366267, time cost: 2.76 mins
+2025-10-21 08:38:42:-- minade_1: 2.028 minfde_1: 4.463 mr_1: 0.667 brier_fde_1: 4.463 minade_k: 0.888 minfde_k: 1.469 mr_k: 0.175 brier_fde_k: 2.074 
+2025-10-21 08:38:42:
+Epoch 4
+2025-10-21 08:51:08:[Training] Avg. loss: 0.531687, time cost: 12.4 mins, lr: 0.00082, peak mem: 15249 MB
+2025-10-21 08:51:08:-- minade_1: 3.171 minfde_1: 7.127 mr_1: 0.785 brier_fde_1: 7.127 minade_k: 1.186 minfde_k: 1.998 mr_k: 0.297 brier_fde_k: 2.661 
+2025-10-21 08:51:08:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch4.tar
+2025-10-21 08:51:08:
+Epoch 5
+2025-10-21 09:03:34:[Training] Avg. loss: 0.524597, time cost: 12.4 mins, lr: 0.001, peak mem: 15150 MB
+2025-10-21 09:03:34:-- minade_1: 3.117 minfde_1: 7.025 mr_1: 0.781 brier_fde_1: 7.025 minade_k: 1.166 minfde_k: 1.955 mr_k: 0.288 brier_fde_k: 2.617 
+2025-10-21 09:06:19:[Validation] Avg. loss: 0.367104, time cost: 2.76 mins
+2025-10-21 09:06:19:-- minade_1: 2.140 minfde_1: 4.756 mr_1: 0.678 brier_fde_1: 4.756 minade_k: 0.869 minfde_k: 1.428 mr_k: 0.172 brier_fde_k: 2.048 
+2025-10-21 09:06:19:
+Epoch 6
+2025-10-21 09:18:44:[Training] Avg. loss: 0.51252, time cost: 12.4 mins, lr: 0.001, peak mem: 15268 MB
+2025-10-21 09:18:44:-- minade_1: 2.993 minfde_1: 6.771 mr_1: 0.771 brier_fde_1: 6.771 minade_k: 1.139 minfde_k: 1.892 mr_k: 0.274 brier_fde_k: 2.549 
+2025-10-21 09:21:29:[Validation] Avg. loss: 0.366837, time cost: 2.76 mins
+2025-10-21 09:21:29:-- minade_1: 2.653 minfde_1: 5.979 mr_1: 0.805 brier_fde_1: 5.979 minade_k: 0.914 minfde_k: 1.545 mr_k: 0.232 brier_fde_k: 2.271 
+2025-10-21 09:21:29:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch6.tar
+2025-10-21 09:21:29:
+Epoch 7
+2025-10-21 09:33:55:[Training] Avg. loss: 0.495175, time cost: 12.4 mins, lr: 0.001, peak mem: 15202 MB
+2025-10-21 09:33:55:-- minade_1: 2.924 minfde_1: 6.627 mr_1: 0.762 brier_fde_1: 6.627 minade_k: 1.111 minfde_k: 1.830 mr_k: 0.266 brier_fde_k: 2.482 
+2025-10-21 09:36:40:[Validation] Avg. loss: 0.333961, time cost: 2.76 mins
+2025-10-21 09:36:40:-- minade_1: 2.031 minfde_1: 4.593 mr_1: 0.657 brier_fde_1: 4.593 minade_k: 0.821 minfde_k: 1.345 mr_k: 0.161 brier_fde_k: 1.969 
+2025-10-21 09:36:41:
+Epoch 8
+2025-10-21 09:49:06:[Training] Avg. loss: 0.490033, time cost: 12.4 mins, lr: 0.001, peak mem: 15251 MB
+2025-10-21 09:49:06:-- minade_1: 2.886 minfde_1: 6.540 mr_1: 0.757 brier_fde_1: 6.540 minade_k: 1.103 minfde_k: 1.804 mr_k: 0.257 brier_fde_k: 2.453 
+2025-10-21 09:51:51:[Validation] Avg. loss: 0.330464, time cost: 2.76 mins
+2025-10-21 09:51:51:-- minade_1: 1.943 minfde_1: 4.376 mr_1: 0.630 brier_fde_1: 4.376 minade_k: 0.829 minfde_k: 1.343 mr_k: 0.159 brier_fde_k: 1.941 
+2025-10-21 09:51:51:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch8.tar
+2025-10-21 09:51:51:
+Epoch 9
+2025-10-21 10:04:17:[Training] Avg. loss: 0.479467, time cost: 12.4 mins, lr: 0.001, peak mem: 15090 MB
+2025-10-21 10:04:17:-- minade_1: 2.819 minfde_1: 6.384 mr_1: 0.745 brier_fde_1: 6.384 minade_k: 1.084 minfde_k: 1.768 mr_k: 0.246 brier_fde_k: 2.415 
+2025-10-21 10:07:03:[Validation] Avg. loss: 0.336273, time cost: 2.76 mins
+2025-10-21 10:07:03:-- minade_1: 2.016 minfde_1: 4.580 mr_1: 0.679 brier_fde_1: 4.580 minade_k: 0.835 minfde_k: 1.381 mr_k: 0.173 brier_fde_k: 1.996 
+2025-10-21 10:07:03:
+Training completed
+2025-10-21 10:11:13:[Round 12] add 5148 hard samples -> labeled=66935, pool=36036
+2025-10-21 10:11:13:
+========== Active Learning Round 13 ==========
+2025-10-21 10:11:13:[Round 13] labeled=66935, pool=36036
+2025-10-21 10:11:13:
+Epoch 0
+2025-10-21 10:24:39:[Training] Avg. loss: 2.41533, time cost: 13.4 mins, lr: 0.0001, peak mem: 15967 MB
+2025-10-21 10:24:39:-- minade_1: 8.013 minfde_1: 17.451 mr_1: 0.917 brier_fde_1: 17.451 minade_k: 5.464 minfde_k: 13.076 mr_k: 0.777 brier_fde_k: 13.685 
+2025-10-21 10:24:39:
+Epoch 1
+2025-10-21 10:38:07:[Training] Avg. loss: 0.609642, time cost: 13.4 mins, lr: 0.00028, peak mem: 14666 MB
+2025-10-21 10:38:07:-- minade_1: 3.214 minfde_1: 7.234 mr_1: 0.791 brier_fde_1: 7.234 minade_k: 1.349 minfde_k: 2.479 mr_k: 0.339 brier_fde_k: 3.133 
+2025-10-21 10:40:52:[Validation] Avg. loss: 0.386769, time cost: 2.76 mins
+2025-10-21 10:40:52:-- minade_1: 2.069 minfde_1: 4.579 mr_1: 0.653 brier_fde_1: 4.579 minade_k: 0.957 minfde_k: 1.508 mr_k: 0.193 brier_fde_k: 2.117 
+2025-10-21 10:40:52:
+Epoch 2
+2025-10-21 10:54:19:[Training] Avg. loss: 0.533408, time cost: 13.4 mins, lr: 0.00046, peak mem: 14915 MB
+2025-10-21 10:54:19:-- minade_1: 3.134 minfde_1: 7.035 mr_1: 0.787 brier_fde_1: 7.035 minade_k: 1.203 minfde_k: 2.064 mr_k: 0.301 brier_fde_k: 2.728 
+2025-10-21 10:54:19:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch2.tar
+2025-10-21 10:54:19:
+Epoch 3
+2025-10-21 11:07:46:[Training] Avg. loss: 0.514192, time cost: 13.4 mins, lr: 0.00064, peak mem: 14947 MB
+2025-10-21 11:07:46:-- minade_1: 3.088 minfde_1: 6.935 mr_1: 0.782 brier_fde_1: 6.935 minade_k: 1.163 minfde_k: 1.969 mr_k: 0.290 brier_fde_k: 2.631 
+2025-10-21 11:10:32:[Validation] Avg. loss: 0.369856, time cost: 2.76 mins
+2025-10-21 11:10:32:-- minade_1: 2.547 minfde_1: 5.450 mr_1: 0.750 brier_fde_1: 5.450 minade_k: 0.913 minfde_k: 1.498 mr_k: 0.198 brier_fde_k: 2.124 
+2025-10-21 11:10:32:
+Epoch 4
+2025-10-21 11:23:59:[Training] Avg. loss: 0.504015, time cost: 13.5 mins, lr: 0.00082, peak mem: 14728 MB
+2025-10-21 11:23:59:-- minade_1: 3.051 minfde_1: 6.866 mr_1: 0.782 brier_fde_1: 6.866 minade_k: 1.147 minfde_k: 1.930 mr_k: 0.284 brier_fde_k: 2.592 
+2025-10-21 11:23:59:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch4.tar
+2025-10-21 11:23:59:
+Epoch 5
+2025-10-21 11:37:26:[Training] Avg. loss: 0.496553, time cost: 13.4 mins, lr: 0.001, peak mem: 15235 MB
+2025-10-21 11:37:26:-- minade_1: 3.010 minfde_1: 6.794 mr_1: 0.776 brier_fde_1: 6.794 minade_k: 1.131 minfde_k: 1.891 mr_k: 0.278 brier_fde_k: 2.553 
+2025-10-21 11:40:12:[Validation] Avg. loss: 0.375288, time cost: 2.76 mins
+2025-10-21 11:40:12:-- minade_1: 2.339 minfde_1: 5.277 mr_1: 0.754 brier_fde_1: 5.277 minade_k: 0.905 minfde_k: 1.522 mr_k: 0.208 brier_fde_k: 2.145 
+2025-10-21 11:40:12:
+Epoch 6
+2025-10-21 11:53:39:[Training] Avg. loss: 0.485002, time cost: 13.5 mins, lr: 0.001, peak mem: 15299 MB
+2025-10-21 11:53:39:-- minade_1: 2.890 minfde_1: 6.536 mr_1: 0.761 brier_fde_1: 6.536 minade_k: 1.106 minfde_k: 1.839 mr_k: 0.262 brier_fde_k: 2.494 
+2025-10-21 11:56:25:[Validation] Avg. loss: 0.343773, time cost: 2.76 mins
+2025-10-21 11:56:25:-- minade_1: 2.215 minfde_1: 5.026 mr_1: 0.704 brier_fde_1: 5.026 minade_k: 0.849 minfde_k: 1.406 mr_k: 0.175 brier_fde_k: 2.032 
+2025-10-21 11:56:25:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch6.tar
+2025-10-21 11:56:25:
+Epoch 7
+2025-10-21 12:09:52:[Training] Avg. loss: 0.471213, time cost: 13.4 mins, lr: 0.001, peak mem: 15946 MB
+2025-10-21 12:09:52:-- minade_1: 2.795 minfde_1: 6.337 mr_1: 0.754 brier_fde_1: 6.337 minade_k: 1.082 minfde_k: 1.782 mr_k: 0.251 brier_fde_k: 2.436 
+2025-10-21 12:12:37:[Validation] Avg. loss: 0.33506, time cost: 2.76 mins
+2025-10-21 12:12:37:-- minade_1: 2.149 minfde_1: 4.848 mr_1: 0.674 brier_fde_1: 4.848 minade_k: 0.832 minfde_k: 1.359 mr_k: 0.162 brier_fde_k: 1.969 
+2025-10-21 12:12:37:
+Epoch 8
+2025-10-21 12:26:04:[Training] Avg. loss: 0.462382, time cost: 13.4 mins, lr: 0.001, peak mem: 14976 MB
+2025-10-21 12:26:04:-- minade_1: 2.792 minfde_1: 6.338 mr_1: 0.752 brier_fde_1: 6.338 minade_k: 1.066 minfde_k: 1.746 mr_k: 0.245 brier_fde_k: 2.398 
+2025-10-21 12:28:50:[Validation] Avg. loss: 0.336516, time cost: 2.77 mins
+2025-10-21 12:28:50:-- minade_1: 1.889 minfde_1: 4.220 mr_1: 0.674 brier_fde_1: 4.220 minade_k: 0.830 minfde_k: 1.329 mr_k: 0.150 brier_fde_k: 1.981 
+2025-10-21 12:28:51:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch8.tar
+2025-10-21 12:28:51:
+Epoch 9
+2025-10-21 12:42:18:[Training] Avg. loss: 0.45818, time cost: 13.5 mins, lr: 0.001, peak mem: 15700 MB
+2025-10-21 12:42:18:-- minade_1: 2.735 minfde_1: 6.212 mr_1: 0.743 brier_fde_1
+: 6.212 minade_k: 1.056 minfde_k: 1.724 mr_k: 0.235 brier_fde_k: 2.374 
+2025-10-21 12:45:04:[Validation] Avg. loss: 0.328799, time cost: 2.76 mins
+2025-10-21 12:45:04:-- minade_1: 2.454 minfde_1: 5.581 mr_1: 0.736 brier_fde_1: 5.581 minade_k: 0.844 minfde_k: 1.370 mr_k: 0.166 brier_fde_k: 2.025 
+2025-10-21 12:45:04:
+Training completed
+2025-10-21 12:48:42:[Round 13] add 5148 hard samples -> labeled=72083, pool=30888
+2025-10-21 12:48:42:
+========== Active Learning Round 14 ==========
+2025-10-21 12:48:42:[Round 14] labeled=72083, pool=30888
+2025-10-21 12:48:42:
+Epoch 0
+2025-10-21 01:03:07:[Training] Avg. loss: 2.23796, time cost: 14.4 mins, lr: 0.0001, peak mem: 15044 MB
+2025-10-21 01:03:07:-- minade_1: 7.831 minfde_1: 17.053 mr_1: 0.908 brier_fde_1: 17.053 minade_k: 5.130 minfde_k: 11.876 mr_k: 0.736 brier_fde_k: 12.510 
+2025-10-21 01:03:07:
+Epoch 1
+2025-10-21 01:17:33:[Training] Avg. loss: 0.56255, time cost: 14.4 mins, lr: 0.00028, peak mem: 15261 MB
+2025-10-21 01:17:33:-- minade_1: 3.224 minfde_1: 7.249 mr_1: 0.788 brier_fde_1: 7.249 minade_k: 1.276 minfde_k: 2.302 mr_k: 0.310 brier_fde_k: 2.959 
+2025-10-21 01:20:17:[Validation] Avg. loss: 0.361833, time cost: 2.73 mins
+2025-10-21 01:20:17:-- minade_1: 2.130 minfde_1: 4.766 mr_1: 0.691 brier_fde_1: 4.766 minade_k: 0.882 minfde_k: 1.449 mr_k: 0.181 brier_fde_k: 2.058 
+2025-10-21 01:20:17:
+Epoch 2
+2025-10-21 01:34:42:[Training] Avg. loss: 0.505945, time cost: 14.4 mins, lr: 0.00046, peak mem: 15151 MB
+2025-10-21 01:34:42:-- minade_1: 3.069 minfde_1: 6.872 mr_1: 0.777 brier_fde_1: 6.872 minade_k: 1.161 minfde_k: 1.983 mr_k: 0.286 brier_fde_k: 2.644 
+2025-10-21 01:34:42:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch2.tar
+2025-10-21 01:34:42:
+Epoch 3
+2025-10-21 01:49:07:[Training] Avg. loss: 0.491355, time cost: 14.4 mins, lr: 0.00064, peak mem: 14812 MB
+2025-10-21 01:49:07:-- minade_1: 3.054 minfde_1: 6.866 mr_1: 0.776 brier_fde_1: 6.866 minade_k: 1.135 minfde_k: 1.906 mr_k: 0.274 brier_fde_k: 2.569 
+2025-10-21 01:51:51:[Validation] Avg. loss: 0.354462, time cost: 2.74 mins
+2025-10-21 01:51:51:-- minade_1: 2.248 minfde_1: 5.025 mr_1: 0.711 brier_fde_1: 5.025 minade_k: 0.871 minfde_k: 1.452 mr_k: 0.189 brier_fde_k: 2.067 
+2025-10-21 01:51:51:
+Epoch 4
+2025-10-21 02:06:17:[Training] Avg. loss: 0.48062, time cost: 14.4 mins, lr: 0.00082, peak mem: 15567 MB
+2025-10-21 02:06:17:-- minade_1: 3.016 minfde_1: 6.789 mr_1: 0.774 brier_fde_1: 6.789 minade_k: 1.111 minfde_k: 1.856 mr_k: 0.268 brier_fde_k: 2.518 
+2025-10-21 02:06:17:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch4.tar
+2025-10-21 02:06:17:
+Epoch 5
+2025-10-21 02:20:50:[Training] Avg. loss: 0.474701, time cost: 14.6 mins, lr: 0.001, peak mem: 15029 MB
+2025-10-21 02:20:50:-- minade_1: 2.939 minfde_1: 6.643 mr_1: 0.768 brier_fde_1: 6.643 minade_k: 1.102 minfde_k: 1.838 mr_k: 0.264 brier_fde_k: 2.498 
+2025-10-21 02:23:34:[Validation] Avg. loss: 0.346613, time cost: 2.74 mins
+2025-10-21 02:23:34:-- minade_1: 2.341 minfde_1: 5.297 mr_1: 0.714 brier_fde_1: 5.297 minade_k: 0.862 minfde_k: 1.397 mr_k: 0.150 brier_fde_k: 2.034 
+2025-10-21 02:23:35:
+Epoch 6
+2025-10-21 02:38:00:[Training] Avg. loss: 0.458084, time cost: 14.4 mins, lr: 0.001, peak mem: 15389 MB
+2025-10-21 02:38:00:-- minade_1: 2.842 minfde_1: 6.435 mr_1: 0.759 brier_fde_1: 6.435 minade_k: 1.067 minfde_k: 1.761 mr_k: 0.247 brier_fde_k: 2.417 
+2025-10-21 02:40:44:[Validation] Avg. loss: 0.343339, time cost: 2.73 mins
+2025-10-21 02:40:44:-- minade_1: 2.002 minfde_1: 4.493 mr_1: 0.680 brier_fde_1: 4.493 minade_k: 0.851 minfde_k: 1.387 mr_k: 0.177 brier_fde_k: 1.978 
+2025-10-21 02:40:44:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch6.tar
+2025-10-21 02:40:44:
+Epoch 7
+2025-10-21 02:55:09:[Training] Avg. loss: 0.449123, time cost: 14.4 mins, lr: 0.001, peak mem: 15355 MB
+2025-10-21 02:55:09:-- minade_1: 2.769 minfde_1: 6.291 mr_1: 0.750 brier_fde_1: 6.291 minade_k: 1.050 minfde_k: 1.717 mr_k: 0.239 brier_fde_k: 2.372 
+2025-10-21 02:57:53:[Validation] Avg. loss: 0.344539, time cost: 2.73 mins
+2025-10-21 02:57:53:-- minade_1: 2.146 minfde_1: 4.677 mr_1: 0.708 brier_fde_1: 4.677 minade_k: 0.866 minfde_k: 1.329 mr_k: 0.155 brier_fde_k: 1.976 
+2025-10-21 02:57:53:
+Epoch 8
+2025-10-21 03:12:18:[Training] Avg. loss: 0.440642, time cost: 14.4 mins, lr: 0.001, peak mem: 15277 MB
+2025-10-21 03:12:18:-- minade_1: 2.721 minfde_1: 6.195 mr_1: 0.746 brier_fde_1: 6.195 minade_k: 1.031 minfde_k: 1.676 mr_k: 0.230 brier_fde_k: 2.325 
+2025-10-21 03:15:02:[Validation] Avg. loss: 0.34352, time cost: 2.74 mins
+2025-10-21 03:15:02:-- minade_1: 2.285 minfde_1: 5.067 mr_1: 0.715 brier_fde_1: 5.067 minade_k: 0.870 minfde_k: 1.432 mr_k: 0.187 brier_fde_k: 2.109 
+2025-10-21 03:15:02:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch8.tar
+2025-10-21 03:15:02:
+Epoch 9
+2025-10-21 03:29:27:[Training] Avg. loss: 0.434789, time cost: 14.4 mins, lr: 0.001, peak mem: 14937 MB
+2025-10-21 03:29:27:-- minade_1: 2.681 minfde_1: 6.104 mr_1: 0.737 brier_fde_1: 6.104 minade_k: 1.026 minfde_k: 1.675 mr_k: 0.226 brier_fde_k: 2.324 
+2025-10-21 03:32:11:[Validation] Avg. loss: 0.323099, time cost: 2.73 mins
+2025-10-21 03:32:11:-- minade_1: 1.911 minfde_1: 4.408 mr_1: 0.645 brier_fde_1: 4.408 minade_k: 0.825 minfde_k: 1.298 mr_k: 0.154 brier_fde_k: 1.924 
+2025-10-21 03:32:11:
+Training completed
+2025-10-21 03:35:18:[Round 14] add 5148 hard samples -> labeled=77231, pool=25740
+2025-10-21 03:35:18:
+========== Active Learning Round 15 ==========
+2025-10-21 03:35:18:[Round 15] labeled=77231, pool=25740
+2025-10-21 03:35:18:
+Epoch 0
+2025-10-21 03:50:43:[Training] Avg. loss: 2.13448, time cost: 15.4 mins, lr: 0.0001, peak mem: 15148 MB
+2025-10-21 03:50:43:-- minade_1: 7.125 minfde_1: 15.982 mr_1: 0.904 brier_fde_1: 15.982 minade_k: 4.993 minfde_k: 11.898 mr_k: 0.728 brier_fde_k: 12.493 
+2025-10-21 03:50:43:
+Epoch 1
+2025-10-21 04:06:10:[Training] Avg. loss: 0.532808, time cost: 15.4 mins, lr: 0.00028, peak mem: 14920 MB
+2025-10-21 04:06:10:-- minade_1: 3.135 minfde_1: 7.049 mr_1: 0.779 brier_fde_1: 7.049 minade_k: 1.237 minfde_k: 2.228 mr_k: 0.301 brier_fde_k: 2.893 
+2025-10-21 04:08:54:[Validation] Avg. loss: 0.391344, time cost: 2.73 mins
+2025-10-21 04:08:54:-- minade_1: 2.281 minfde_1: 4.951 mr_1: 0.707 brier_fde_1: 4.951 minade_k: 0.952 minfde_k: 1.515 mr_k: 0.202 brier_fde_k: 2.158 
+2025-10-21 04:08:54:
+Epoch 2
+2025-10-21 04:24:20:[Training] Avg. loss: 0.481809, time cost: 15.4 mins, lr: 0.00046, peak mem: 14695 MB
+2025-10-21 04:24:20:-- minade_1: 3.057 minfde_1: 6.861 mr_1: 0.775 brier_fde_1: 6.861 minade_k: 1.132 minfde_k: 1.922 mr_k: 0.276 brier_fde_k: 2.584 
+2025-10-21 04:24:20:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch2.tar
+2025-10-21 04:24:20:
+Epoch 3
+2025-10-21 04:39:45:[Training] Avg. loss: 0.469867, time cost: 15.4 mins, lr: 0.00064, peak mem: 16856 MB
+2025-10-21 04:39:45:-- minade_1: 2.984 minfde_1: 6.740 mr_1: 0.774 brier_fde_1: 6.740 minade_k: 1.104 minfde_k: 1.857 mr_k: 0.269 brier_fde_k: 2.516 
+2025-10-21 04:42:29:[Validation] Avg. loss: 0.373445, time cost: 2.73 mins
+2025-10-21 04:42:29:-- minade_1: 2.598 minfde_1: 5.751 mr_1: 0.763 brier_fde_1: 5.751 minade_k: 0.913 minfde_k: 1.498 mr_k: 0.186 brier_fde_k: 2.208 
+2025-10-21 04:42:29:
+Epoch 4
+2025-10-21 04:57:54:[Training] Avg. loss: 0.463593, time cost: 15.4 mins, lr: 0.00082, peak mem: 15214 MB
+2025-10-21 04:57:54:-- minade_1: 2.933 minfde_1: 6.627 mr_1: 0.771 brier_fde_1: 6.627 minade_k: 1.094 minfde_k: 1.831 mr_k: 0.264 brier_fde_k: 2.490 
+2025-10-21 04:57:54:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch4.tar
+2025-10-21 04:57:54:
+Epoch 5
+2025-10-21 05:13:20:[Training] Avg. loss: 0.454858, time cost: 15.4 mins, lr: 0.001, peak mem: 14454 MB
+2025-10-21 05:13:20:-- minade_1: 2.888 minfde_1: 6.544 mr_1: 0.765 brier_fde_1: 6.544 minade_k: 1.079 minfde_k: 1.799 mr_k: 0.253 brier_fde_k: 2.459 
+2025-10-21 05:16:04:[Validation] Avg. loss: 0.34604, time cost: 2.74 mins
+2025-10-21 05:16:04:-- minade_1: 2.188 minfde_1: 4.937 mr_1: 0.683 brier_fde_1: 4.937 minade_k: 0.861 minfde_k: 1.399 mr_k: 0.175 brier_fde_k: 2.012 
+2025-10-21 05:16:04:
+Epoch 6
+2025-10-21 05:31:30:[Training] Avg. loss: 0.439823, time cost: 15.4 mins, lr: 0.001, peak mem: 15054 MB
+2025-10-21 05:31:30:-- minade_1: 2.774 minfde_1: 6.289 mr_1: 0.751 brier_fde_1: 6.289 minade_k: 1.047 minfde_k: 1.726 mr_k: 0.239 brier_fde_k: 2.381 
+2025-10-21 05:34:14:[Validation] Avg. loss: 0.339295, time cost: 2.73 mins
+2025-10-21 05:34:14:-- minade_1: 2.246 minfde_1: 5.155 mr_1: 0.723 brier_fde_1: 5.155 minade_k: 0.861 minfde_k: 1.362 mr_k: 0.150 brier_fde_k: 2.024 
+2025-10-21 05:34:14:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch6.tar
+2025-10-21 05:34:14:
+Epoch 7
+2025-10-21 05:49:39:[Training] Avg. loss: 0.430421, time cost: 15.4 mins, lr: 0.001, peak mem: 14551 MB
+2025-10-21 05:49:39:-- minade_1: 2.666 minfde_1: 6.043 mr_1: 0.738 brier_fde_1: 6.043 minade_k: 1.026 minfde_k: 1.683 mr_k: 0.227 brier_fde_k: 2.331 
+2025-10-21 05:52:23:[Validation] Avg. loss: 0.331704, time cost: 2.74 mins
+2025-10-21 05:52:23:-- minade_1: 1.763 minfde_1: 4.000 mr_1: 0.631 brier_fde_1: 4.000 minade_k: 0.809 minfde_k: 1.302 mr_k: 0.144 brier_fde_k: 1.921 
+2025-10-21 05:52:23:
+Epoch 8
+2025-10-21 06:07:49:[Training] Avg. loss: 0.42271, time cost: 15.4 mins, lr: 0.001, peak mem: 15487 MB
+2025-10-21 06:07:49:-- minade_1: 2.644 minfde_1: 6.000 mr_1: 0.732 brier_fde_1: 6.000 minade_k: 1.011 minfde_k: 1.648 mr_k: 0.220 brier_fde_k: 2.295 
+2025-10-21 06:10:33:[Validation] Avg. loss: 0.320073, time cost: 2.73 mins
+2025-10-21 06:10:33:-- minade_1: 2.209 minfde_1: 5.030 mr_1: 0.691 brier_fde_1: 5.030 minade_k: 0.807 minfde_k: 1.305 mr_k: 0.144 brier_fde_k: 1.928 
+2025-10-21 06:10:33:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch8.tar
+2025-10-21 06:10:33:
+Epoch 9
+2025-10-21 06:25:58:[Training] Avg. loss: 0.416488, time cost: 15.4 mins, lr: 0.001, peak mem: 14800 MB
+2025-10-21 06:25:58:-- minade_1: 2.594 minfde_1: 5.907 mr_1: 0.729 brier_fde_1: 5.907 minade_k: 1.001 minfde_k: 1.622 mr_k: 0.214 brier_fde_k: 2.269 
+2025-10-21 06:28:41:[Validation] Avg. loss: 0.319362, time cost: 2.73 mins
+2025-10-21 06:28:41:-- minade_1: 2.308 minfde_1: 5.287 mr_1: 0.683 brier_fde_1: 5.287 minade_k: 0.806 minfde_k: 1.310 mr_k: 0.158 brier_fde_k: 1.932 
+2025-10-21 06:28:41:
+Training completed
+2025-10-21 06:31:18:[Round 15] add 5148 hard samples -> labeled=82379, pool=20592
+2025-10-21 06:31:18:
+========== Active Learning Round 16 ==========
+2025-10-21 06:31:18:[Round 16] labeled=82379, pool=20592
+2025-10-21 06:31:18:
+Epoch 0
+2025-10-21 06:47:41:[Training] Avg. loss: 1.88456, time cost: 16.4 mins, lr: 0.0001, peak mem: 15531 MB
+2025-10-21 06:47:41:-- minade_1: 6.408 minfde_1: 14.601 mr_1: 0.886 brier_fde_1: 14.601 minade_k: 4.514 minfde_k: 11.023 mr_k: 0.686 brier_fde_k: 11.610 
+2025-10-21 06:47:41:
+Epoch 1
+2025-10-21 07:04:04:[Training] Avg. loss: 0.509355, time cost: 16.4 mins, lr: 0.00028, peak mem: 15403 MB
+2025-10-21 07:04:04:-- minade_1: 2.817 minfde_1: 6.300 mr_1: 0.758 brier_fde_1: 6.300 minade_k: 1.201 minfde_k: 2.143 mr_k: 0.290 brier_fde_k: 2.799 
+2025-10-21 07:06:46:[Validation] Avg. loss: 0.376656, time cost: 2.7 mins
+2025-10-21 07:06:46:-- minade_1: 2.193 minfde_1: 4.914 mr_1: 0.692 brier_fde_1: 4.914 minade_k: 0.917 minfde_k: 1.559 mr_k: 0.220 brier_fde_k: 2.187 
+2025-10-21 07:06:46:
+Epoch 2
+2025-10-21 07:23:09:[Training] Avg. loss: 0.469432, time cost: 16.4 mins, lr: 0.00046, peak mem: 15221 MB
+2025-10-21 07:23:09:-- minade_1: 2.822 minfde_1: 6.322 mr_1: 0.761 brier_fde_1: 6.322 minade_k: 1.119 minfde_k: 1.918 mr_k: 0.276 brier_fde_k: 2.577 
+2025-10-21 07:23:09:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch2.tar
+2025-10-21 07:23:09:
+Epoch 3
+2025-10-21 07:39:33:[Training] Avg. loss: 0.460271, time cost: 16.4 mins, lr: 0.00064, peak mem: 14791 MB
+2025-10-21 07:39:33:-- minade_1: 2.780 minfde_1: 6.253 mr_1: 0.759 brier_fde_1: 6.253 minade_k: 1.103 minfde_k: 1.876 mr_k: 0.270 brier_fde_k: 2.535 
+2025-10-21 07:42:15:[Validation] Avg. loss: 0.37643, time cost: 2.71 mins
+2025-10-21 07:42:15:-- minade_1: 2.611 minfde_1: 6.048 mr_1: 0.824 brier_fde_1: 6.048 minade_k: 0.906 minfde_k: 1.535 mr_k: 0.197 brier_fde_k: 2.207 
+2025-10-21 07:42:15:
+Epoch 4
+2025-10-21 07:58:37:[Training] Avg. loss: 0.452135, time cost: 16.4 mins, lr: 0.00082, peak mem: 15869 MB
+2025-10-21 07:58:37:-- minade_1: 2.759 minfde_1: 6.231 mr_1: 0.758 brier_fde_1: 6.231 minade_k: 1.087 minfde_k: 1.841 mr_k: 0.261 brier_fde_k: 2.499 
+2025-10-21 07:58:37:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch4.tar
+2025-10-21 07:58:37:
+Epoch 5
+2025-10-21 08:15:01:[Training] Avg. loss: 0.449306, time cost: 16.4 mins, lr: 0.001, peak mem: 14595 MB
+2025-10-21 08:15:01:-- minade_1: 2.759 minfde_1: 6.255 mr_1: 0.759 brier_fde_1: 6.255 minade_k: 1.079 minfde_k: 1.821 mr_k: 0.257 brier_fde_k: 2.476 
+2025-10-21 08:17:43:[Validation] Avg. loss: 0.360832, time cost: 2.7 mins
+2025-10-21 08:17:43:-- minade_1: 2.495 minfde_1: 5.587 mr_1: 0.754 brier_fde_1: 5.587 minade_k: 0.884 minfde_k: 1.462 mr_k: 0.190 brier_fde_k: 2.133 
+2025-10-21 08:17:43:
+Epoch 6
+2025-10-21 08:34:06:[Training] Avg. loss: 0.434369, time cost: 16.4 mins, lr: 0.001, peak mem: 15423 MB
+2025-10-21 08:34:06:-- minade_1: 2.691 minfde_1: 6.120 mr_1: 0.747 brier_fde_1: 6.120 minade_k: 1.050 minfde_k: 1.758 mr_k: 0.244 brier_fde_k: 2.410 
+2025-10-21 08:36:48:[Validation] Avg. loss: 0.35174, time cost: 2.7 mins
+2025-10-21 08:36:48:-- minade_1: 2.063 minfde_1: 4.629 mr_1: 0.661 brier_fde_1: 4.629 minade_k: 0.866 minfde_k: 1.444 mr_k: 0.173 brier_fde_k: 2.085 
+2025-10-21 08:36:48:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch6.tar
+2025-10-21 08:36:48:
+Epoch 7
+2025-10-21 08:53:11:[Training] Avg. loss: 0.425726, time cost: 16.4 mins, lr: 0.001, peak mem: 15302 MB
+2025-10-21 08:53:11:-- minade_1: 2.648 minfde_1: 6.028 mr_1: 0.742 brier_fde_1: 6.028 minade_k: 1.033 minfde_k: 1.718 mr_k: 0.234 brier_fde_k: 2.367 
+2025-10-21 08:55:53:[Validation] Avg. loss: 0.367636, time cost: 2.71 mins
+2025-10-21 08:55:53:-- minade_1: 1.970 minfde_1: 4.415 mr_1: 0.654 brier_fde_1: 4.415 minade_k: 0.894 minfde_k: 1.497 mr_k: 0.206 brier_fde_k: 2.079 
+2025-10-21 08:55:53:
+Epoch 8
+2025-10-21 09:12:16:[Training] Avg. loss: 0.417513, time cost: 16.4 mins, lr: 0.001, peak mem: 15258 MB
+2025-10-21 09:12:16:-- minade_1: 2.641 minfde_1: 6.012 mr_1: 0.734 brier_fde_1: 6.012 minade_k: 1.016 minfde_k: 1.680 mr_k: 0.226 brier_fde_k: 2.328 
+2025-10-21 09:14:58:[Validation] Avg. loss: 0.329698, time cost: 2.7 mins
+2025-10-21 09:14:58:-- minade_1: 2.019 minfde_1: 4.538 mr_1: 0.658 brier_fde_1: 4.538 minade_k: 0.832 minfde_k: 1.357 mr_k: 0.167 brier_fde_k: 1.965 
+2025-10-21 09:14:58:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch8.tar
+2025-10-21 09:14:58:
+Epoch 9
+2025-10-21 09:31:20:[Training] Avg. loss: 0.410574, time cost: 16.4 mins, lr: 0.001, peak mem: 16977 MB
+2025-10-21 09:31:20:-- minade_1: 2.600 minfde_1: 5.921 mr_1: 0.730 brier_fde_1: 5.921 minade_k: 1.004 minfde_k: 1.651 mr_k: 0.219 brier_fde_k: 2.298 
+2025-10-21 09:34:02:[Validation] Avg. loss: 0.331153, time cost: 2.71 mins
+2025-10-21 09:34:02:-- minade_1: 2.080 minfde_1: 4.756 mr_1: 0.669 brier_fde_1: 4.756 minade_k: 0.835 minfde_k: 1.359 mr_k: 0.170 brier_fde_k: 1.982 
+2025-10-21 09:34:02:
+Training completed
+2025-10-21 09:36:06:[Round 16] add 5148 hard samples -> labeled=87527, pool=15444
+2025-10-21 09:36:06:
+========== Active Learning Round 17 ==========
+2025-10-21 09:36:06:[Round 17] labeled=87527, pool=15444
+2025-10-21 09:36:06:
+Epoch 0
+2025-10-21 09:53:30:[Training] Avg. loss: 1.77963, time cost: 17.4 mins, lr: 0.0001, peak mem: 14748 MB
+2025-10-21 09:53:30:-- minade_1: 6.472 minfde_1: 14.423 mr_1: 0.876 brier_fde_1: 14.423 minade_k: 4.383 minfde_k: 10.409 mr_k: 0.651 brier_fde_k: 10.987 
+2025-10-21 09:53:30:
+Epoch 1
+2025-10-21 10:10:54:[Training] Avg. loss: 0.478743, time cost: 17.4 mins, lr: 0.00028, peak mem: 15296 MB
+2025-10-21 10:10:54:-- minade_1: 2.896 minfde_1: 6.511 mr_1: 0.763 brier_fde_1: 6.511 minade_k: 1.154 minfde_k: 2.036 mr_k: 0.272 brier_fde_k: 2.689 
+2025-10-21 10:13:37:[Validation] Avg. loss: 0.362556, time cost: 2.71 mins
+2025-10-21 10:13:37:-- minade_1: 2.652 minfde_1: 6.003 mr_1: 0.719 brier_fde_1: 6.003 minade_k: 0.883 minfde_k: 1.507 mr_k: 0.187 brier_fde_k: 2.140 
+2025-10-21 10:13:37:
+Epoch 2
+2025-10-21 10:31:00:[Training] Avg. loss: 0.438657, time cost: 17.4 mins, lr: 0.00046, peak mem: 14937 MB
+2025-10-21 10:31:00:-- minade_1: 2.844 minfde_1: 6.390 mr_1: 0.756 brier_fde_1: 6.390 minade_k: 1.079 minfde_k: 1.831 mr_k: 0.253 brier_fde_k: 2.491 
+2025-10-21 10:31:00:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch2.tar
+2025-10-21 10:31:00:
+Epoch 3
+2025-10-21 10:48:24:[Training] Avg. loss: 0.424396, time cost: 17.4 mins, lr: 0.00064, peak mem: 15378 MB
+2025-10-21 10:48:24:-- minade_1: 2.804 minfde_1: 6.330 mr_1: 0.753 brier_fde_1: 6.330 minade_k: 1.050 minfde_k: 1.761 mr_k: 0.242 brier_fde_k: 2.422 
+2025-10-21 10:51:07:[Validation] Avg. loss: 0.343828, time cost: 2.71 mins
+2025-10-21 10:51:07:-- minade_1: 2.038 minfde_1: 4.636 mr_1: 0.654 brier_fde_1: 4.636 minade_k: 0.852 minfde_k: 1.431 mr_k: 0.196 brier_fde_k: 2.069 
+2025-10-21 10:51:07:
+Epoch 4
+2025-10-21 11:08:31:[Training] Avg. loss: 0.418751, time cost: 17.4 mins, lr: 0.00082, peak mem: 15898 MB
+2025-10-21 11:08:31:-- minade_1: 2.764 minfde_1: 6.250 mr_1: 0.753 brier_fde_1: 6.250 minade_k: 1.039 minfde_k: 1.737 mr_k: 0.238 brier_fde_k: 2.400 
+2025-10-21 11:08:31:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch4.tar
+2025-10-21 11:08:31:
+Epoch 5
+2025-10-21 11:25:56:[Training] Avg. loss: 0.412349, time cost: 17.4 mins, lr: 0.001, peak mem: 15581 MB
+2025-10-21 11:25:56:-- minade_1: 2.686 minfde_1: 6.086 mr_1: 0.746 brier_fde_1: 6.086 minade_k: 1.025 minfde_k: 1.703 mr_k: 0.231 brier_fde_k: 2.361 
+2025-10-21 11:28:38:[Validation] Avg. loss: 0.357192, time cost: 2.7 mins
+2025-10-21 11:28:38:-- minade_1: 2.223 minfde_1: 4.980 mr_1: 0.714 brier_fde_1: 4.980 minade_k: 0.896 minfde_k: 1.426 mr_k: 0.167 brier_fde_k: 2.071 
+2025-10-21 11:28:38:
+Epoch 6
+2025-10-21 11:46:02:[Training] Avg. loss: 0.399271, time cost: 17.4 mins, lr: 0.001, peak mem: 15048 MB
+2025-10-21 11:46:02:-- minade_1: 2.591 minfde_1: 5.871 mr_1: 0.733 brier_fde_1: 5.871 minade_k: 0.999 minfde_k: 1.643 mr_k: 0.217 brier_fde_k: 2.299 
+2025-10-21 11:48:44:[Validation] Avg. loss: 0.332289, time cost: 2.71 mins
+2025-10-21 11:48:44:-- minade_1: 2.095 minfde_1: 4.783 mr_1: 0.671 brier_fde_1: 4.783 minade_k: 0.847 minfde_k: 1.367 mr_k: 0.160 brier_fde_k: 2.012 
+2025-10-21 11:48:44:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch6.tar
+2025-10-21 11:48:44:
+Epoch 7
+2025-10-22 12:06:09:[Training] Avg. loss: 0.392389, time cost: 17.4 mins, lr: 0.001, peak mem: 15817 MB
+2025-10-22 12:06:09:-- minade_1: 2.537 minfde_1: 5.766 mr_1: 0.726 brier_fde_1: 5.766 minade_k: 0.984 minfde_k: 1.613 mr_k: 0.210 brier_fde_k: 2.264 
+2025-10-22 12:08:51:[Validation] Avg. loss: 0.319274, time cost: 2.71 mins
+2025-10-22 12:08:51:-- minade_1: 1.946 minfde_1: 4.417 mr_1: 0.640 brier_fde_1: 4.417 minade_k: 0.809 minfde_k: 1.319 mr_k: 0.155 brier_fde_k: 1.921 
+2025-10-22 12:08:51:
+Epoch 8
+2025-10-22 12:26:16:[Training] Avg. loss: 0.383805, time cost: 17.4 mins, lr: 0.001, peak mem: 14549 MB
+2025-10-22 12:26:16:-- minade_1: 2.485 minfde_1: 5.645 mr_1: 0.714 brier_fde_1: 5.645 minade_k: 0.966 minfde_k: 1.568 mr_k: 0.201 brier_fde_k: 2.216 
+2025-10-22 12:28:59:[Validation] Avg. loss: 0.317664, time cost: 2.71 mins
+2025-10-22 12:28:59:-- minade_1: 2.619 minfde_1: 5.865 mr_1: 0.719 brier_fde_1: 5.865 minade_k: 0.809 minfde_k: 1.297 mr_k: 0.148 brier_fde_k: 1.937 
+2025-10-22 12:28:59:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch8.tar
+2025-10-22 12:28:59:
+Epoch 9
+2025-10-22 12:46:23:[Training] Avg. loss: 0.377534, time cost: 17.4 mins, lr: 0.001, peak mem: 15349 MB
+2025-10-22 12:46:23:-- minade_1: 2.443 minfde_1: 5.570 mr_1: 0.708 brier_fde_1: 5.570 minade_k: 0.950 minfde_k: 1.534 mr_k: 0.195 brier_fde_k: 2.180 
+2025-10-22 12:49:06:[Validation] Avg. loss: 0.323861, time cost: 2.7 mins
+2025-10-22 12:49:06:-- minade_1: 2.241 minfde_1: 5.104 mr_1: 0.710 brier_fde_1: 5.104 minade_k: 0.834 minfde_k: 1.384 mr_k: 0.172 brier_fde_k: 2.004 
+2025-10-22 12:49:06:
+Training completed
+2025-10-22 12:50:38:[Round 17] add 5148 hard samples -> labeled=92675, pool=10296
+2025-10-22 12:50:38:
+========== Active Learning Round 18 ==========
+2025-10-22 12:50:38:[Round 18] labeled=92675, pool=10296
+2025-10-22 12:50:38:
+Epoch 0
+2025-10-22 01:09:03:[Training] Avg. loss: 1.64374, time cost: 18.4 mins, lr: 0.0001, peak mem: 15522 MB
+2025-10-22 01:09:03:-- minade_1: 6.503 minfde_1: 14.443 mr_1: 0.877 brier_fde_1: 14.443 minade_k: 4.145 minfde_k: 10.102 mr_k: 0.645 brier_fde_k: 10.727 
+2025-10-22 01:09:03:
+Epoch 1
+2025-10-22 01:27:27:[Training] Avg. loss: 0.456141, time cost: 18.4 mins, lr: 0.00028, peak mem: 15041 MB
+2025-10-22 01:27:27:-- minade_1: 2.845 minfde_1: 6.388 mr_1: 0.760 brier_fde_1: 6.388 minade_k: 1.129 minfde_k: 1.988 mr_k: 0.266 brier_fde_k: 2.640 
+2025-10-22 01:30:10:[Validation] Avg. loss: 0.375279, time cost: 2.71 mins
+2025-10-22 01:30:10:-- minade_1: 2.293 minfde_1: 5.210 mr_1: 0.742 brier_fde_1: 5.210 minade_k: 0.899 minfde_k: 1.514 mr_k: 0.181 brier_fde_k: 2.137 
+2025-10-22 01:30:10:
+Epoch 2
+2025-10-22 01:48:33:[Training] Avg. loss: 0.421557, time cost: 18.4 mins, lr: 0.00046, peak mem: 14835 MB
+2025-10-22 01:48:33:-- minade_1: 2.783 minfde_1: 6.246 mr_1: 0.757 brier_fde_1: 6.246 minade_k: 1.062 minfde_k: 1.799 mr_k: 0.253 brier_fde_k: 2.457 
+2025-10-22 01:48:33:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch2.tar
+2025-10-22 01:48:33:
+Epoch 3
+2025-10-22 02:06:56:[Training] Avg. loss: 0.409137, time cost: 18.4 mins, lr: 0.00064, peak mem: 15363 MB
+2025-10-22 02:06:56:-- minade_1: 2.767 minfde_1: 6.234 mr_1: 0.757 brier_fde_1: 6.234 minade_k: 1.035 minfde_k: 1.737 mr_k: 0.240 brier_fde_k: 2.398 
+2025-10-22 02:09:38:[Validation] Avg. loss: 0.351847, time cost: 2.71 mins
+2025-10-22 02:09:38:-- minade_1: 2.093 minfde_1: 4.710 mr_1: 0.697 brier_fde_1: 4.710 minade_k: 0.854 minfde_k: 1.403 mr_k: 0.164 brier_fde_k: 2.039 
+2025-10-22 02:09:38:
+Epoch 4
+2025-10-22 02:28:02:[Training] Avg. loss: 0.404644, time cost: 18.4 mins, lr: 0.00082, peak mem: 15939 MB
+2025-10-22 02:28:02:-- minade_1: 2.699 minfde_1: 6.090 mr_1: 0.747 brier_fde_1: 6.090 minade_k: 1.018 minfde_k: 1.702 mr_k: 0.233 brier_fde_k: 2.360 
+2025-10-22 02:28:02:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch4.tar
+2025-10-22 02:28:02:
+Epoch 5
+2025-10-22 02:46:25:[Training] Avg. loss: 0.399055, time cost: 18.4 mins, lr: 0.001, peak mem: 15428 MB
+2025-10-22 02:46:25:-- minade_1: 2.668 minfde_1: 6.035 mr_1: 0.743 brier_fde_1: 6.035 minade_k: 1.010 minfde_k: 1.686 mr_k: 0.229 brier_fde_k: 2.344 
+2025-10-22 02:49:07:[Validation] Avg. loss: 0.355981, time cost: 2.71 mins
+2025-10-22 02:49:07:-- minade_1: 1.939 minfde_1: 4.308 mr_1: 0.672 brier_fde_1: 4.308 minade_k: 0.871 minfde_k: 1.432 mr_k: 0.167 brier_fde_k: 2.047 
+2025-10-22 02:49:08:
+Epoch 6
+2025-10-22 03:07:31:[Training] Avg. loss: 0.385982, time cost: 18.4 mins, lr: 0.001, peak mem: 14806 MB
+2025-10-22 03:07:31:-- minade_1: 2.579 minfde_1: 5.848 mr_1: 0.733 brier_fde_1: 5.848 minade_k: 0.983 minfde_k: 1.627 mr_k: 0.217 brier_fde_k: 2.279 
+2025-10-22 03:10:14:[Validation] Avg. loss: 0.334432, time cost: 2.71 mins
+2025-10-22 03:10:14:-- minade_1: 2.009 minfde_1: 4.476 mr_1: 0.651 brier_fde_1: 4.476 minade_k: 0.827 minfde_k: 1.346 mr_k: 0.156 brier_fde_k: 1.979 
+2025-10-22 03:10:14:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch6.tar
+2025-10-22 03:10:14:
+Epoch 7
+2025-10-22 03:28:37:[Training] Avg. loss: 0.376759, time cost: 18.4 mins, lr: 0.001, peak mem: 15296 MB
+2025-10-22 03:28:37:-- minade_1: 2.499 minfde_1: 5.671 mr_1: 0.719 brier_fde_1: 5.671 minade_k: 0.964 minfde_k: 1.580 mr_k: 0.205 brier_fde_k: 2.228 
+2025-10-22 03:31:20:[Validation] Avg. loss: 0.323663, time cost: 2.71 mins
+2025-10-22 03:31:20:-- minade_1: 1.737 minfde_1: 3.889 mr_1: 0.612 brier_fde_1: 3.889 minade_k: 0.807 minfde_k: 1.285 mr_k: 0.142 brier_fde_k: 1.915 
+2025-10-22 03:31:20:
+Epoch 8
+2025-10-22 03:49:44:[Training] Avg. loss: 0.36958, time cost: 18.4 mins, lr: 0.001, peak mem: 16065 MB
+2025-10-22 03:49:44:-- minade_1: 2.426 minfde_1: 5.508 mr_1: 0.711 brier_fde_1: 5.508 minade_k: 0.950 minfde_k: 1.544 mr_k: 0.196 brier_fde_k: 2.189 
+2025-10-22 03:52:27:[Validation] Avg. loss: 0.337884, time cost: 2.71 mins
+2025-10-22 03:52:27:-- minade_1: 1.966 minfde_1: 4.381 mr_1: 0.687 brier_fde_1: 4.381 minade_k: 0.851 minfde_k: 1.382 mr_k: 0.173 brier_fde_k: 2.011 
+2025-10-22 03:52:27:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch8.tar
+2025-10-22 03:52:27:
+Epoch 9
+2025-10-22 04:10:51:[Training] Avg. loss: 0.364121, time cost: 18.4 mins, lr: 0.001, peak mem: 15493 MB
+2025-10-22 04:10:51:-- minade_1: 2.393 minfde_1: 5.441 mr_1: 0.705 brier_fde_1: 5.441 minade_k: 0.934 minfde_k: 1.516 mr_k: 0.191 brier_fde_k: 2.160 
+2025-10-22 04:13:33:[Validation] Avg. loss: 0.320516, time cost: 2.71 mins
+2025-10-22 04:13:33:-- minade_1: 1.661 minfde_1: 3.714 mr_1: 0.588 brier_fde_1: 3.714 minade_k: 0.796 minfde_k: 1.269 mr_k: 0.143 brier_fde_k: 1.888 
+2025-10-22 04:13:34:
+Training completed
+2025-10-22 04:14:36:[Round 18] add 5148 hard samples -> labeled=97823, pool=5148
+2025-10-22 04:14:36:
+========== Active Learning Round 19 ==========
+2025-10-22 04:14:36:[Round 19] labeled=97823, pool=5148
+2025-10-22 04:14:36:
+Epoch 0
+2025-10-22 04:34:10:[Training] Avg. loss: 1.56144, time cost: 19.6 mins, lr: 0.0001, peak mem: 15459 MB
+2025-10-22 04:34:10:-- minade_1: 6.107 minfde_1: 13.447 mr_1: 0.866 brier_fde_1: 13.447 minade_k: 4.037 minfde_k: 9.504 mr_k: 0.632 brier_fde_k: 10.101 
+2025-10-22 04:34:10:
+Epoch 1
+2025-10-22 04:53:43:[Training] Avg. loss: 0.438379, time cost: 19.6 mins, lr: 0.00028, peak mem: 15517 MB
+2025-10-22 04:53:43:-- minade_1: 2.821 minfde_1: 6.351 mr_1: 0.755 brier_fde_1: 6.351 minade_k: 1.112 minfde_k: 1.963 mr_k: 0.264 brier_fde_k: 2.616 
+2025-10-22 04:56:29:[Validation] Avg. loss: 0.363819, time cost: 2.76 mins
+2025-10-22 04:56:29:-- minade_1: 2.129 minfde_1: 4.806 mr_1: 0.677 brier_fde_1: 4.806 minade_k: 0.868 minfde_k: 1.465 mr_k: 0.174 brier_fde_k: 2.079 
+2025-10-22 04:56:29:
+Epoch 2
+2025-10-22 05:16:02:[Training] Avg. loss: 0.403279, time cost: 19.5 mins, lr: 0.00046, peak mem: 15150 MB
+2025-10-22 05:16:02:-- minade_1: 2.732 minfde_1: 6.151 mr_1: 0.747 brier_fde_1: 6.151 minade_k: 1.041 minfde_k: 1.771 mr_k: 0.244 brier_fde_k: 2.424 
+2025-10-22 05:16:02:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch2.tar
+2025-10-22 05:16:02:
+Epoch 3
+2025-10-22 05:35:36:[Training] Avg. loss: 0.393594, time cost: 19.6 mins, lr: 0.00064, peak mem: 16339 MB
+2025-10-22 05:35:36:-- minade_1: 2.680 minfde_1: 6.051 mr_1: 0.744 brier_fde_1: 6.051 minade_k: 1.016 minfde_k: 1.719 mr_k: 0.236 brier_fde_k: 2.377 
+2025-10-22 05:38:21:[Validation] Avg. loss: 0.346596, time cost: 2.76 mins
+2025-10-22 05:38:21:-- minade_1: 2.095 minfde_1: 4.739 mr_1: 0.662 brier_fde_1: 4.739 minade_k: 0.877 minfde_k: 1.441 mr_k: 0.183 brier_fde_k: 2.051 
+2025-10-22 05:38:21:
+Epoch 4
+2025-10-22 05:57:55:[Training] Avg. loss: 0.386817, time cost: 19.6 mins, lr: 0.00082, peak mem: 15329 MB
+2025-10-22 05:57:55:-- minade_1: 2.644 minfde_1: 5.975 mr_1: 0.740 brier_fde_1: 5.975 minade_k: 0.999 minfde_k: 1.678 mr_k: 0.228 brier_fde_k: 2.332 
+2025-10-22 05:57:55:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch4.tar
+2025-10-22 05:57:55:
+Epoch 5
+2025-10-22 06:17:29:[Training] Avg. loss: 0.379093, time cost: 19.6 mins, lr: 0.001, peak mem: 15321 MB
+2025-10-22 06:17:29:-- minade_1: 2.596 minfde_1: 5.896 mr_1: 0.737 brier_fde_1: 5.896 minade_k: 0.984 minfde_k: 1.640 mr_k: 0.220 brier_fde_k: 2.295 
+2025-10-22 06:20:15:[Validation] Avg. loss: 0.346071, time cost: 2.76 mins
+2025-10-22 06:20:15:-- minade_1: 2.178 minfde_1: 4.949 mr_1: 0.684 brier_fde_1: 4.949 minade_k: 0.874 minfde_k: 1.446 mr_k: 0.176 brier_fde_k: 2.089 
+2025-10-22 06:20:15:
+Epoch 6
+2025-10-22 06:39:49:[Training] Avg. loss: 0.369145, time cost: 19.6 mins, lr: 0.001, peak mem: 15144 MB
+2025-10-22 06:39:49:-- minade_1: 2.519 minfde_1: 5.723 mr_1: 0.724 brier_fde_1: 5.723 minade_k: 0.962 minfde_k: 1.595 mr_k: 0.209 brier_fde_k: 2.244 
+2025-10-22 06:42:34:[Validation] Avg. loss: 0.332115, time cost: 2.76 mins
+2025-10-22 06:42:34:-- minade_1: 2.068 minfde_1: 4.661 mr_1: 0.673 brier_fde_1: 4.661 minade_k: 0.836 minfde_k: 1.343 mr_k: 0.166 brier_fde_k: 1.968 
+2025-10-22 06:42:34:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch6.tar
+2025-10-22 06:42:34:
+Epoch 7
+2025-10-22 07:02:11:[Training] Avg. loss: 0.361158, time cost: 19.6 mins, lr: 0.001, peak mem: 15076 MB
+2025-10-22 07:02:11:-- minade_1: 2.446 minfde_1: 5.572 mr_1: 0.715 brier_fde_1: 5.572 minade_k: 0.945 minfde_k: 1.551 mr_k: 0.198 brier_fde_k: 2.196 
+2025-10-22 07:04:57:[Validation] Avg. loss: 0.333128, time cost: 2.76 mins
+2025-10-22 07:04:57:-- minade_1: 2.388 minfde_1: 5.550 mr_1: 0.772 brier_fde_1: 5.550 minade_k: 0.826 minfde_k: 1.348 mr_k: 0.149 brier_fde_k: 2.058 
+2025-10-22 07:04:57:
+Epoch 8
+2025-10-22 07:24:30:[Training] Avg. loss: 0.353618, time cost: 19.5 mins, lr: 0.001, peak mem: 15182 MB
+2025-10-22 07:24:30:-- minade_1: 2.406 minfde_1: 5.488 mr_1: 0.706 brier_fde_1: 5.488 minade_k: 0.926 minfde_k: 1.510 mr_k: 0.190 brier_fde_k: 2.156 
+2025-10-22 07:27:15:[Validation] Avg. loss: 0.320998, time cost: 2.76 mins
+2025-10-22 07:27:15:-- minade_1: 1.967 minfde_1: 4.466 mr_1: 0.644 brier_fde_1: 4.466 minade_k: 0.805 minfde_k: 1.292 mr_k: 0.144 brier_fde_k: 1.919 
+2025-10-22 07:27:15:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch8.tar
+2025-10-22 07:27:15:
+Epoch 9
+2025-10-22 07:46:49:[Training] Avg. loss: 0.348865, time cost: 19.6 mins, lr: 0.001, peak mem: 15076 MB
+2025-10-22 07:46:49:-- minade_1: 2.370 minfde_1: 5.406 mr_1: 0.700 brier_fde_1: 5.406 minade_k: 0.915 minfde_k: 1.484 mr_k: 0.184 brier_fde_k: 2.127 
+2025-10-22 07:49:34:[Validation] Avg. loss: 0.310751, time cost: 2.76 mins
+2025-10-22 07:49:34:-- minade_1: 2.130 minfde_1: 4.894 mr_1: 0.667 brier_fde_1: 4.894 minade_k: 0.784 minfde_k: 1.275 mr_k: 0.137 brier_fde_k: 1.905 
+2025-10-22 07:49:34:
+Training completed
+2025-10-22 07:50:06:[Round 19] add 5148 hard samples -> labeled=102971, pool=0
+2025-10-22 07:50:06:[ActiveLoop] pool empty after selection -> exit
+2025-10-22 07:50:06:
+========== Active Learning Round 20 ==========
+2025-10-22 07:50:06:[Round 20] labeled=102971, pool=0
+2025-10-22 07:50:06:
+Epoch 0
+2025-10-22 08:10:29:[Training] Avg. loss: 1.41318, time cost: 20.4 mins, lr: 0.0001, peak mem: 16188 MB
+2025-10-22 08:10:29:-- minade_1: 5.720 minfde_1: 12.563 mr_1: 0.839 brier_fde_1: 12.563 minade_k: 3.716 minfde_k: 8.544 mr_k: 0.579 brier_fde_k: 9.144 
+2025-10-22 08:10:29:
+Epoch 1
+2025-10-22 08:30:51:[Training] Avg. loss: 0.40865, time cost: 20.4 mins, lr: 0.00028, peak mem: 16730 MB
+2025-10-22 08:30:51:-- minade_1: 2.665 minfde_1: 5.976 mr_1: 0.737 brier_fde_1: 5.976 minade_k: 1.060 minfde_k: 1.844 mr_k: 0.238 brier_fde_k: 2.491 
+2025-10-22 08:33:32:[Validation] Avg. loss: 0.378925, time cost: 2.68 mins
+2025-10-22 08:33:32:-- minade_1: 2.397 minfde_1: 5.172 mr_1: 0.754 brier_fde_1: 5.172 minade_k: 0.933 minfde_k: 1.527 mr_k: 0.192 brier_fde_k: 2.231 
+2025-10-22 08:33:32:
+Epoch 2
+2025-10-22 08:53:54:[Training] Avg. loss: 0.381734, time cost: 20.4 mins, lr: 0.00046, peak mem: 15353 MB
+2025-10-22 08:53:54:-- minade_1: 2.663 minfde_1: 5.982 mr_1: 0.738 brier_fde_1: 5.982 minade_k: 1.003 minfde_k: 1.698 mr_k: 0.227 brier_fde_k: 2.353 
+2025-10-22 08:53:54:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch2.tar
+2025-10-22 08:53:54:
+Epoch 3
+2025-10-22 09:14:16:[Training] Avg. loss: 0.371845, time cost: 20.4 mins, lr: 0.00064, peak mem: 15335 MB
+2025-10-22 09:14:16:-- minade_1: 2.624 minfde_1: 5.907 mr_1: 0.732 brier_fde_1: 5.907 minade_k: 0.986 minfde_k: 1.653 mr_k: 0.218 brier_fde_k: 2.310 
+2025-10-22 09:16:57:[Validation] Avg. loss: 0.35188, time cost: 2.68 mins
+2025-10-22 09:16:57:-- minade_1: 2.145 minfde_1: 4.734 mr_1: 0.701 brier_fde_1: 4.734 minade_k: 0.874 minfde_k: 1.435 mr_k: 0.192 brier_fde_k: 2.074 
+2025-10-22 09:16:57:
+Epoch 4
+2025-10-22 09:37:20:[Training] Avg. loss: 0.366667, time cost: 20.4 mins, lr: 0.00082, peak mem: 15431 MB
+2025-10-22 09:37:20:-- minade_1: 2.572 minfde_1: 5.819 mr_1: 0.728 brier_fde_1: 5.819 minade_k: 0.969 minfde_k: 1.618 mr_k: 0.210 brier_fde_k: 2.274 
+2025-10-22 09:37:20:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch4.tar
+2025-10-22 09:37:20:
+Epoch 5
+2025-10-22 09:57:42:[Training] Avg. loss: 0.360507, time cost: 20.4 mins, lr: 0.001, peak mem: 15132 MB
+2025-10-22 09:57:42:-- minade_1: 2.512 minfde_1: 5.700 mr_1: 0.724 brier_fde_1: 5.700 minade_k: 0.959 minfde_k: 1.591 mr_k: 0.207 brier_fde_k: 2.246 
+2025-10-22 10:00:23:[Validation] Avg. loss: 0.344361, time cost: 2.68 mins
+2025-10-22 10:00:23:-- minade_1: 2.137 minfde_1: 4.793 mr_1: 0.666 brier_fde_1: 4.793 minade_k: 0.852 minfde_k: 1.399 mr_k: 0.167 brier_fde_k: 2.010 
+2025-10-22 10:00:23:
+Epoch 6
+2025-10-22 10:20:45:[Training] Avg. loss: 0.350788, time cost: 20.4 mins, lr: 0.001, peak mem: 15125 MB
+2025-10-22 10:20:45:-- minade_1: 2.460 minfde_1: 5.605 mr_1: 0.714 brier_fde_1: 5.605 minade_k: 0.932 minfde_k: 1.533 mr_k: 0.192 brier_fde_k: 2.187 
+2025-10-22 10:23:26:[Validation] Avg. loss: 0.327249, time cost: 2.67 mins
+2025-10-22 10:23:26:-- minade_1: 1.951 minfde_1: 4.396 mr_1: 0.667 brier_fde_1: 4.396 minade_k: 0.812 minfde_k: 1.292 mr_k: 0.148 brier_fde_k: 1.928 
+2025-10-22 10:23:26:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch6.tar
+2025-10-22 10:23:26:
+Epoch 7
+2025-10-22 10:43:47:[Training] Avg. loss: 0.341338, time cost: 20.3 mins, lr: 0.001, peak mem: 14791 MB
+2025-10-22 10:43:47:-- minade_1: 2.420 minfde_1: 5.536 mr_1: 0.707 brier_fde_1: 5.536 minade_k: 0.915 minfde_k: 1.496 mr_k: 0.184 brier_fde_k: 2.146 
+2025-10-22 10:46:27:[Validation] Avg. loss: 0.328201, time cost: 2.68 mins
+2025-10-22 10:46:27:-- minade_1: 2.844 minfde_1: 6.470 mr_1: 0.786 brier_fde_1: 6.470 minade_k: 0.822 minfde_k: 1.363 mr_k: 0.159 brier_fde_k: 2.036 
+2025-10-22 10:46:27:
+Epoch 8
+2025-10-22 11:06:50:[Training] Avg. loss: 0.335258, time cost: 20.4 mins, lr: 0.001, peak mem: 15004 MB
+2025-10-22 11:06:50:-- minade_1: 2.354 minfde_1: 5.397 mr_1: 0.698 brier_fde_1: 5.397 minade_k: 0.899 minfde_k: 1.461 mr_k: 0.179 brier_fde_k: 2.108 
+2025-10-22 11:09:31:[Validation] Avg. loss: 0.322478, time cost: 2.68 mins
+2025-10-22 11:09:31:-- minade_1: 2.399 minfde_1: 5.585 mr_1: 0.737 brier_fde_1: 5.585 minade_k: 0.824 minfde_k: 1.362 mr_k: 0.169 brier_fde_k: 2.031 
+2025-10-22 11:09:31:Save the model to saved_models/20251020-153045_Simpl_ckpt_epoch8.tar
+2025-10-22 11:09:31:
+Epoch 9
+2025-10-22 11:29:53:[Training] Avg. loss: 0.331436, time cost: 20.4 mins, lr: 0.001, peak mem: 15679 MB
+2025-10-22 11:29:53:-- minade_1: 2.320 minfde_1: 5.310 mr_1: 0.692 brier_fde_1: 5.310 minade_k: 0.891 minfde_k: 1.441 mr_k: 0.174 brier_fde_k: 2.086 
+2025-10-22 11:32:34:[Validation] Avg. loss: 0.320011, time cost: 2.67 mins
+2025-10-22 11:32:34:-- minade_1: 1.840 minfde_1: 4.138 mr_1: 0.627 brier_fde_1: 4.138 minade_k: 0.800 minfde_k: 1.257 mr_k: 0.134 brier_fde_k: 1.891 
+2025-10-22 11:32:34:
+Training completed
+2025-10-22 11:32:34:[ActiveLoop] pool empty -> exit
