@@ -68,12 +68,12 @@ def main():
     (train_set, val_set), net, loss_fn, optimizer, evaluator = loader.load()
 
     dl_train = DataLoader(train_set,
-                          batch_size=args.train_batch_size,
-                          shuffle=True,
-                          num_workers=8,
-                          collate_fn=train_set.collate_fn,
-                          drop_last=True,
-                          pin_memory=True)
+                        batch_size=args.train_batch_size,
+                        shuffle=True,
+                        num_workers=8,
+                        collate_fn=train_set.collate_fn,
+                        drop_last=True,
+                        pin_memory=True)
     dl_val = DataLoader(val_set,
                         batch_size=args.val_batch_size,
                         shuffle=False,
@@ -120,7 +120,7 @@ def main():
 
         loss_avg = train_loss_meter.metrics['loss'].avg
         logger.print('[Training] Avg. loss: {:.6}, time cost: {:.3} mins, lr: {:.3}, peak mem: {} MB'.
-                     format(loss_avg, (time.time() - epoch_start) / 60.0, lr, max_memory))
+                    format(loss_avg, (time.time() - epoch_start) / 60.0, lr, max_memory))
         logger.print('-- ' + train_eval_meter.get_info())
 
         logger.add_scalar('train/lr', lr, it=epoch)

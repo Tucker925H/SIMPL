@@ -15,16 +15,17 @@ class LossFunc(nn.Module):
         super(LossFunc, self).__init__()
         self.config = config
         self.device = device
+        # SmoothL1Loss(reduction="none")でサンプルごとの損失を得る
         self.reg_loss = nn.SmoothL1Loss(reduction="sum")
 
-    def forward(self, out, data):
-        # print('TRAJS_FUT: ', len(data["TRAJS_FUT"]), data["TRAJS_FUT"][0].shape)
-        # print('PAD_FUT: ', len(data["PAD_FUT"]), data["PAD_FUT"][0].shape)
-        # print('out: ', out[1][0].shape, out[0][0].shape)
+    def forward(self, out, data, return_per_sample=False):
         loss_out = self.pred_loss(out,
                                   gpu(data["TRAJS_FUT"], self.device),
                                   to_long(gpu(data["PAD_FUT"], self.device)))
         loss_out["loss"] = loss_out["cls_loss"] + loss_out["reg_loss"]
+        if return_per_sample:
+            # reg_loss_per_sample: shape [N] (N=サンプル数)
+            loss_out["loss_per_sample"] = loss_out["reg_loss_per_sample"].detach().cpu()
         return loss_out
 
     def pred_loss(self, out: Dict[str, List[torch.Tensor]], gt_preds: List[torch.Tensor], pad_flags: List[torch.Tensor]):
