@@ -89,7 +89,8 @@ def build_dataloader(dataset, batch_size, shuffle, collate_fn, workers=8, drop_l
 
 
 def train_one_model(args, device, logger, date_str, net, loss_fn, optimizer, evaluator,
-                    train_dataset, val_dataset, net_name, rank_metric):
+                    train_dataset, val_dataset, net_name, rank_metric,
+                    cumulative_start_time: float = None, round_id: int = None):
     """
     既存の「学習ロジック」をそのまま使うための関数化。
     学習内側の処理（for epoch in range...）は一切変更しない。
@@ -192,7 +193,18 @@ def train_one_model(args, device, logger, date_str, net, loss_fn, optimizer, eva
             save_ckpt(net, optimizer, epoch, 'saved_models/', model_name)
             logger.print('Save the model to {}'.format('saved_models/' + model_name))
 
-    logger.print("\nTraining completed")
+    # Compute elapsed time. If a cumulative start time is provided (from main),
+    # report cumulative time up to this round; otherwise report local training time.
+    end_time = time.time()
+    try:
+        if cumulative_start_time is not None:
+            elapsed_min = (end_time - cumulative_start_time) / 60.0
+        else:
+            elapsed_min = (end_time - epoch_start) / 60.0
+    except Exception:
+        elapsed_min = (end_time - start_time) / 60.0 if 'start_time' in locals() else 0.0
+
+    logger.print(f"\nTraining completed in {elapsed_min:.2f} mins at round {round_id if round_id is not None else 'N/A'}")
 
     # save trained model (final for this round)
     model_name = date_str + '_{}_epoch{}.tar'.format(net_name, args.train_epoches)
@@ -268,7 +280,7 @@ def main():
     all_indices = list(range(total))
 
     # ★ 使用する割合を変数で指定（例：0.05 → 5%）
-    train_ratio = 1.0
+    train_ratio = 0.01
 
     # 使用するデータ数を計算
     # subset_size = int(total * train_ratio)
@@ -314,13 +326,15 @@ def main():
         # ★ 今ラウンドの学習用データは「累積の labeled_indices 」
         train_subset = Subset(train_set, sorted(labeled_indices))
 
-        # ★ 学習（エポック内のロジックは既存コードそのまま）
+        # ★ 学習（エポック内のロジックは既存コードそのま）
         train_one_model(
             args=args, device=device, logger=logger, date_str=date_str,
             net=net, loss_fn=loss_fn, optimizer=optimizer, evaluator=evaluator,
             train_dataset=train_subset, val_dataset=val_set,
-            net_name=net_name, rank_metric=rank_metric
+            net_name=net_name, rank_metric=rank_metric,
+            cumulative_start_time=start_time, round_id=round_id
         )
+
 
         # ★ プールが空なら終了
         if not pool_indices:
